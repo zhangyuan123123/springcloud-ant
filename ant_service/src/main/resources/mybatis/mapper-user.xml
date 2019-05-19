@@ -3,5 +3,55 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.mapper.AntMapper">
-
+<update id="setBlacklist">
+    update loginuser set status=2 where phone=#{phoneName}
+</update>
+    <update id="setBlacklist2">
+    update loginuser set status=2 where email=#{emailName}
+</update>
+<select id="getUserByNameAndPwd" resultType="com.jk.model.LoginUser">
+    select * from loginuser where account=#{account} and password=#{password}
+</select>
+<select id="findStatus" resultType="java.lang.String">
+    select status from loginuser where phone=#{phoneName}
+</select>
+<select id="findStatus2" resultType="java.lang.String">
+    select status from loginuser where email=#{emailName}
+</select>
+<select id="findUserByAccount" resultType="java.lang.Long">
+   select count(*) from loginuser where account=#{account}
+</select>
+<insert id="addUser">
+    insert into loginuser (account,password,type,username,phone,email,position,status) values(#{account},#{password},#{type},#{username},#{phone},#{email},1,1)
+</insert>
+<select id="findUser" resultType="com.jk.model.LoginUser" >
+    select * from loginuser where id=#{id}
+</select>
+<update id="updatePassWord">
+    update loginuser set password=#{password} where id=#{id}
+</update>
+<select id="findline" resultType="com.jk.model.GongSiAndLine">
+    select * from t_company c,lineslist l where c.id=l.gongsiid and c.name=#{name} limit #{page},#{limit}
+</select>
+<select id="getGongsiAndLineSumSize" resultType="long">
+    select count(*) from t_company c,lineslist l where c.id=l.gongsiid
+</select>
+<insert id="addLineUserC">
+    insert into user_line_company(userid,lineid,companyid) values (#{userId},#{lid},#{id})
+</insert>
+<select id="findcommontable" resultType="com.jk.model.GongSiAndLine">
+    select * from user_line_company ulc,loginuser u,lineslist l,t_company c where ulc.companyid=c.id and ulc.userid=u.id and ulc.lineid=l.lid limit #{page},#{limit}
+</select>
+<select id="getcommontableSumSize" resultType="long">
+    select count(ulc.id) from user_line_company ulc,loginuser u,lineslist l,t_company c where ulc.companyid=c.id and ulc.userid=u.id and ulc.lineid=l.lid
+</select>
+<select id="findhei" resultType="com.jk.model.LoginUser">
+    select  * from loginuser where status=2
+</select>
+<select id="getheiSumSize" resultType="java.lang.Long">
+ select  count(*) from loginuser where status=2
+</select>
+<update id="delheimingdan">
+  update loginuser set status=1 where id=#{id}
+</update>
 </mapper>

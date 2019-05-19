@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="/jquery-1.8.0.js"></script>
+<link rel="stylesheet" href="/layui/css/layui.css" />
+<link rel="stylesheet" href="/layui/css/modules/laydate/default/laydate.css">
+<script src="/layui/layui.all.js" charset="UTF-8"></script>
+<script src="/layui/layui.js" charset="UTF-8"></script>
+<body>
+<table class="layui-hide" id="heimingdantable"  lay-filter="tblist"></table>
+</body>
+<script type="text/javascript">
+    layui.use('table', function(){
+        var table = layui.table;
+        //第一个实例
+        table.render({
+            elem: '#heimingdantable'
+            ,height: 312
+            ,url: '../ant/findhei' //数据接口
+            ,page: true //开启分页
+            ,limit:4
+            ,limits:[4,6,8]
+            ,cols: [
+                [ //表头
+                    {field: 'username', title: '用户名', width:140}
+                    ,{field: 'account', title: '账号', width:200}
+                    ,{field: 'password', title: '密码', width:200}
+                    ,{field: 'phone', title: '手机号', width:200}
+                    ,{field: 'email', title: '邮箱', width:200}
+                    ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}
+                ]
+            ],
+        })
+        //通过添加监听
+        table.on('tool(tblist)', function(obj) {
+            data = obj.data;
+            console.log(data)
+            //然后data.你的值就可以了
+            alert(data.id);
+        })
+    })
+    var data;
+
+    function delheimingdan(id){
+        alert("id");
+        $.ajax({
+            url:"../ant/delheimingdan",
+            type:"post",
+            data:{id:id},
+            success:function(data){
+                layer.msg('移除成功');
+                location.reload();
+            },error:function(){
+                layer.msg('移除失败');
+            }
+        });
+    }
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="detail" href="javascript:delheimingdan(data.id)">移除黑名单</a>
+</script>
+</html>
