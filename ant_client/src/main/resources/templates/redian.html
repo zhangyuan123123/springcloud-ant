@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="/bootstrap/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+<link rel="stylesheet" href="/bootstrap/bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" href="/bootstrap/bootstrap-table/bootstrap-table.css">
+<link rel="stylesheet" href="/bootstrap/bootstrap-fileinput/css/fileinput.css">
+<script src="/bootstrap/easyui1.5/jquery.min.js"></script>
+<script src="/bootstrap/bootstrap3/js/bootstrap.js"></script>
+<script src="/bootstrap/bootstrap-table/bootstrap-table.js"></script>
+<script src="/bootstrap/bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+<script src="/bootstrap/bootbox/bootbox.all.min.js"></script>
+<script src="/bootstrap/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+<script src="/bootstrap/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="/bootstrap/bootstrap-fileinput/js/fileinput.js"></script>
+<script src="/bootstrap/bootstrap-fileinput/js/locales/zh.js"></script>
+<body>
+
+<div id="newTable">
+    <div>
+        <font size="6px"><a  href="/ant/wuZhuan?msg=1" >物流专线新闻</a></font>
+        <font size="6px"><a  href="/ant/wuZhuan?msg=2">物流公司新闻</a></font>
+        <font size="6px"><a  href="/ant/wuZhuan?msg=3">物流行业新闻</a></font>
+        <font size="6px"><a  href="/ant/wuZhuan?msg=4">货运时刻表</a></font>
+        <font size="6px"><a  href="/ant/wuZhuan?msg=5">名人专访</a></font>
+        <font size="6px"><a  href="/ant/wuZhuan?msg=6">物流招标</a></font>
+        <font size="6px"><a  href="/ant/wuZhuan?msg=7">绿蚂蚁</a></font>
+        <font size="6px"><a  href="/ant/wuZhuan?msg=8">热点新闻</a></font>
+        <font size="6px"><a  href="/ant/wuZhuan?msg=9">物流专线</a></font>
+        <div id="div1" name="div1"  align="center" style="margin-left:1500px;width:100px; height:50px; line-height:20px;"></div>
+    </div>
+    <div class="position">
+        <a class="home" href="">首页</a><em>>
+    </em> <span><a href="/page/xinwen">物流新闻</a></span></em>>
+        </em> <span id="span">热点新闻</span></em>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+
+    $(function () {
+        initBuyTable();
+    });
+
+    function initBuyTable() {
+
+        $("#newTable").bootstrapTable({
+            url: '/xinwen',
+            toolbar: '#toolbar',
+            pagination: false, //是否展示分页
+            pageList: [3, 5, 10, 20, 50],//分页组件
+            pageNumber: 1,
+            pageSize: 3,//默认每页条数
+            //页面修饰
+            showRefresh: true,//是否显示刷新按钮
+            showToggle: true,//是否显示 切换试图（table/card）按钮
+            detailView: true,//设置为 true 可以显示详细页面模式。
+            showColumns: true,//是否显示 内容列下拉框
+            clickToSelect: true, //是否启用点击选中行
+            showPaginationSwitch: true,//是否显示 数据条数选择框
+            //解决条查乱码
+            method: "post",
+            contentType:'application/x-www-form-urlencoded;charset=UTF-8',   //数据编码纯文本  offset=0&limit=5
+            //传递参数,条件查询,分页传参
+            queryParams: function () {
+
+                return {
+                    //有分页的固定传值
+                    page: this.pageNumber,
+                    rows: this.pageSize,
+
+                }
+            },
+            sidePagination: 'server',
+            columns: [
+                {field: 'title', formatter: function (value, row, index) {
+                        return "<a href='javascript:addPing(" + row.id + ")'>"+value+"</a>";
+                    }},
+                {field: 'time'},
+                {field: 'src'},
+                {field: 'content'},
+
+            ]
+        })
+    }
+
+</script>
+</html>
