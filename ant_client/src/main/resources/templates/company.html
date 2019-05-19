@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="../js/layui/css/layui.css" />
+<link rel="stylesheet" href="../js/layui/css/modules/laydate/default/laydate.css">
+<link rel="stylesheet" href="../js/layui/css/layui.css"  media="all">
+<script type="text/javascript" src="../js/layui/layui.js"></script>
+<script src="../js/layui/layui.all.js" charset="UTF-8"></script>
+
+<style>
+    * {
+        position: relative;
+    }
+
+    .header, .wrap,    .block-wrapper  .block-wrapper  .section-2 .section-2   .active-list .item,  .fw-list .item    {
+        zoom: 1;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .top {
+        position: relative;
+        z-index: 200;
+        height: 30px;
+        border-bottom: 1px solid #eaeaea;
+        color: #969696;
+    }
+    .header{
+        text-align: center;
+    }
+    .header {
+        background-color: #fff;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    .top-right .top-area, .top-right .tel-app {
+        position: relative;
+    }
+    .top-left, .top-right .item-list .item,   .block-wrapper h3   , .jy-list .item, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list  .partner-list .item , .search-road strong, .search-road label, .search-road select  , .send-reply strong, .send-reply label, .send-reply select , .top-right, .top-right .item-list, dl.dl1 dt a  {
+        display: inline;
+    }
+    .top-left, .top-right .item-list .item,   .block-wrapper h3    , .jy-list .item,   .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .partner-list .item  , .search-road strong, .search-road label, .search-road select  , .send-reply strong, .send-reply label, .send-reply select  {
+        float: left;
+    }
+    .top-right, .top-right .item-list, dl.dl1 dt     {
+        float: right;
+    }
+    .top-left, .top-right {
+        width: 50%;
+        line-height: 30px;
+    }
+    .top-right .item-list .item {
+        position: relative;
+        margin-left: 3px;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    .icons-wx {
+        background-position: -62px -56px;
+        height: 16px;
+        width: 21px;
+    }
+
+    .icons-arrow-down {
+        background-position: -34px -56px;
+        height: 12px;
+        width: 12px;
+    }
+    .icons-photo {
+        background-position: -275px -56px;
+        height: 18px;
+        width: 11px;
+    }
+    .icons-position {
+        background-position: -145px -56px;
+        height: 16px;
+        width: 11px;
+    }
+
+    .icons-wx {
+        width: 21px;
+        height: 16px;
+    }
+    .icons-arrow-down {
+        width: 12px;
+        height: 12px;
+    }
+    .icons-photo {
+        width: 11px;
+        height: 18px;
+    }
+    .icons-position {
+        width: 11px;
+        height: 16px;
+    }
+    .main-color {
+        color: #72b111;
+    }
+    .top-right span, .top-right a{
+        display: inline-block;
+    }
+    a:visited {
+        color: #72b111;
+    }
+    .top a {
+        margin-left: 5px;
+    }
+    .top-right span, .top-right a {
+        vertical-align: middle;
+    }
+    .top-right a {
+        color: #969696;
+    }
+    .icons-qq {
+        background-position: -115px -56px;
+        height: 16px;
+        width: 14px;
+    }
+    .top-right .dropdown-box {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        height: 29px;
+        line-height: 28px;
+        border: 1px solid #fff;
+        border-bottom: none;
+        background-color: #fff;
+        z-index: 11;
+        cursor: pointer;
+    }
+    .top-right .menu {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        width: 63px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        z-index: 10;
+        color: #818181;
+        font-size: 12px;
+    }
+    .top-right .top-wx .menu {
+        width: 127px;
+    }
+    .top-right .ewm-box {
+        padding: 10px 15px 15px 15px;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .top-right .menu img {
+        vertical-align: top;
+    }
+    .top-right .ewm-box img {
+        margin-top: 5px;
+    }
+    .top-right .tel-app .menu {
+        width: 127px;
+    }
+    .top-right .top-area-content span {
+        display: block;
+        height: 29px;
+        line-height: 29px;
+        padding: 0 5px;
+        text-align: center;
+    }
+
+
+    #dul>li {
+        float: none !important;
+        display: block !important;
+
+    }
+    .demo1{
+        float: left;
+    }
+    .demo2{
+        float: right;
+
+    }
+
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    .header, .footer, .frendlink, .flow-box, .block-wrapper {
+        text-align: center;
+    }
+    .footer {
+        margin: 36px 0  40px 0;
+        text-align: center;
+        color: #a1a1a1;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    .clearfix, .header, .wrap, .frendlink, .frendlink .link-content, .banner-box, .flow-box, .block-wrapper, .block-wrapper .block-header, .block-wrapper .block-body, .section-1, .section-2, .section-2 .section-left, .section-2 .area-box, .jy-list, .banchi, .active-list .item, .teijia-list, .com-list, .wuliu-list, .fw-list .item, .partner-list, .areas-box .tab-title, .areas-box .area-content {
+        zoom: 1;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .footer p {
+        margin: 16px 0;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    a:visited {
+        color: #72b111;
+    }
+    .footer a {
+        color: #666;
+    }
+    .sitemap-a a {
+        color: #ddd;
+    }
+    .footer span.line {
+        margin: 0 15px;
+    }
+
+
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    .clearfix, .header, .wrap, .frendlink, .frendlink .link-content, .banner-box, .flow-box, .block-wrapper, .block-wrapper .block-header, .block-wrapper .block-body, .section-1, .section-2, .section-2 .section-left, .section-2 .area-box, .jy-list, .banchi, .active-list .item, .teijia-list, .com-list, .wuliu-list, .fw-list .item, .partner-list, .areas-box .tab-title, .areas-box .area-content {
+        zoom: 1;
+    }
+    .header, .footer, .frendlink, .flow-box, .block-wrapper {
+        text-align: center;
+    }
+    .block-wrapper {
+        margin: 15px auto;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .block-wrapper .block-header {
+        height: 46px;
+        border-bottom: 2px solid #72b111;
+        color: #676767;
+    }
+    .block-wrapper .block-content {
+        border: 1px solid #eaeaea;
+        background-color: #fff;
+    }
+    .dongtai .block-content {
+        height: 300px;
+    }
+    .fl, .top-left, .top-right .item-list .item, .nav ul li, .flow-box ul li, .flow-box .text-box, .block-wrapper h3, .block-wrapper .tab-title, .block-wrapper .tab-title .tab-item, .section-1 .section-left, .section-2 .section-left, .section-2 .section-right, .section-2 .area-1, .section-2 .area-2, .section-4, .section-5, .section-6, .jy-list .item, .banchi .banchi-left, .banchi .banchi-middle, .banchi .banchi-right, .active-list .active-img, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .item-icon, .partner-list .item, .areas-box .tab-item, .search-box .search-content, .search-box .search-aside, .search-road strong, .search-road label, .search-road select, .search-road .btn, .send-reply strong, .send-reply label, .send-reply select, .send-reply .btn, .fr, .top-right, .top-right .item-list, dl.dl1 dt a.more, .section-1 .section-right, .section-2 .area-3 {
+        display: inline;
+    }
+    .fl, .top-left, .top-right .item-list .item, .nav ul li, .flow-box ul li, .flow-box .text-box, .block-wrapper h3, .block-wrapper .tab-title, .block-wrapper .tab-title .tab-item, .section-1 .section-left, .section-2 .section-left, .section-2 .section-right, .section-2 .area-1, .section-2 .area-2, .section-4, .section-5, .section-6, .jy-list .item, .banchi .banchi-left, .banchi .banchi-middle, .banchi .banchi-right, .active-list .active-img, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .item-icon, .partner-list .item, .areas-box .tab-item, .search-box .search-content, .search-box .search-aside, .search-road strong, .search-road label, .search-road select, .search-road .btn, .send-reply strong, .send-reply label, .send-reply select, .send-reply .btn {
+        float: left;
+    }
+    .section-5 {
+        width: 235px;
+    }
+    .dongtai .section-5 {
+        width: 249px;
+        height: auto;
+    }
+    .section-6 {
+        width: 195px;
+    }
+    .dongtai .section-6 {
+        position: relative;
+        width: 440px;
+        height: auto;
+        border-left: 1px dotted #bdbdbd;
+    }
+    .t-1 {
+        height: 50px;
+        line-height: 50px;
+        color: #6b6b6b;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .partner .t-1 {
+        position: absolute;
+        top: -50px;
+        left: 12px;
+        font-size: 16px;
+    }
+    .partner-list .item {
+        position: relative;
+        width: 120px;
+        height: 38px;
+        margin: 28px 10px 0 15px;
+        text-align: center;
+        border-right: 1px dashed #e0e0e0;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    img {
+        display: inline-block;
+        border: 0 none;
+    }
+    a img {
+        border: none;
+    }
+    .dongtai-list {
+        margin: 15px;
+    }
+    .dongtai-list .item {
+        height: 26px;
+        line-height: 26px;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .li_icon {
+        padding: 0px 5px;
+        background-color: #ffb90f;
+        margin-right: 10px;
+        color: #fff;
+    }
+    .dongtai-list a {
+        color: #6b6b6b;
+    }
+    .block-wrapper h3 {
+        float: left;
+        width: 290px;
+        line-height: 46px;
+        text-indent: 20px;
+    }
+
+
+
+</style>
+
+<body>
+
+
+<div class="header"><div class="top"><div class="wrap">
+    <div class="top-left">
+        您好，欢迎使用绿蚂蚁干线物流B2B平台！<a href="http://www.lvmae.com/member/login.php" rel="nofollow">登录</a><a href="http://www.lvmae.com/member/register.php" rel="nofollow">注册</a>
+    </div>
+    <div class="top-right">
+        <ul class="item-list">
+            <li class="item">当前城市：</li>
+            <li class="item top-area dropdown">
+                <div class="top-area-content dropdown-box">
+                    <span class="main-color" id="selectArea">深圳<a>[切换城市]</a></span>
+                </div>
+            </li>
+            <li class="item"><span class="icon icons-position"></span></li>
+            <li class="item tel-app dropdown">
+                <div class="tel-app-content dropdown-box">
+                    &nbsp;&nbsp;<span class="icons-photo"></span>&nbsp;<span>手机APP</span>&nbsp;<span class="icons-arrow-down"></span>&nbsp;&nbsp;
+                </div>
+                <div class="menu">
+                    <div class="ewm-box">
+                        <p>扫描二维码<br>
+                            下载安卓客户端</p>
+                        <p><img width="98" height="98" alt="" src="http://www.lvmae.com/skin/default/images/ewm_1.jpg"></p>
+                    </div>
+                </div>
+            </li>
+            <li class="item dropdown top-wx">
+                <div class="dropdown-box">
+                    &nbsp;&nbsp;<span class="icons-wx"></span>&nbsp;微信号&nbsp;<span class="icons-arrow-down"></span>&nbsp;&nbsp;
+                </div>
+                <div class="menu">
+                    <div class="ewm-box">
+                        <p>扫描二维码<br>
+                            关注绿蚂蚁公众号</p>
+                        <p><img width="98" height="98" alt="" src="http://www.lvmae.com/skin/default/images/ewm_2.jpg"></p>
+                    </div>
+                </div>
+            </li>
+            <li class="item"><a title="点击这里给我发消息" class="icons-qq" onclick="" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzgwMDA1NjQwNF8zNjU3MzlfODAwMDU2NDA0XzJf" target="_blank">&nbsp;</a></li>
+            <li class="item"><a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzgwMDA1NjQwNF8zNjU3MzlfODAwMDU2NDA0XzJf" target="_blank">客户服务</a></li>
+        </ul>
+    </div>
+</div></div></div>
+
+<!--  源代码顶部结束---------------------------------------------  -->
+
+<!-- 蚂蚁标题  -->
+<center>
+    <div style="width: 100%;height:100px;background-color:white;">  <!-- border: 1px black solid; -->
+        <!-- 标题左 -->
+        <div style="float: left; margin-left:80px;height: 100%;width: 40%">
+            <img src="../img/topleft.png" style="float: left;">
+        </div>
+
+        <!-- 标题右 -->
+        <div style="float: right;margin-right:80px;height: 100%;width: 40%">
+            <img src="../img/topright.png" style="float: right;">
+        </div>
+    </div>
+</center>
+<!-- 标题结束  -->
+
+
+<!-- 导航条开始 -->
+
+<div style="width: 100%;height:80px;">  <!-- border: 1px red solid -->
+    <div style="width:70px;height:80px;float:left;"></div>
+    <ul class="layui-nav layui-bg-green"   >
+        <li class="layui-nav-item"><a id="0" href=""></a></li>
+        <li class="layui-nav-item layui-this"><a id="1" href=""></a></li>
+        <li class="layui-nav-item"><a id="2" href=""></a></li>
+        <li class="layui-nav-item"><a id="3" href=""></a></li>
+        <li class="layui-nav-item"><a id="4" href=""></a></li>
+        <li class="layui-nav-item"><a id="5" href=""></a></li>
+        <li class="layui-nav-item"><a id="6" href=""></a></li>
+        <li class="layui-nav-item"><a id="7" href=""></a></li>
+        <li class="layui-nav-item"><a id="8" href=""></a></li>
+
+    </ul>
+
+</div>
+
+<!-- 导航条结束 -->
+
+
+
+<!-- 分站展示开始 -->
+<div style="width:100%;height:30px;background-color: white">
+    <div style="float:left;width:63px;height:100%;"></div>
+    <div style="float: left;width:40px;hight:80%;margin:6px 20px 10px 20px;background-color: #00bbee" >
+        <font>&nbsp;&nbsp;分&nbsp;站&nbsp;&nbsp;</font>
+    </div>
+    <div style="float:left;margin-top: 5px">
+        <span  id="spanId"></span>
+    </div>
+
+</div>
+<!-- 分站展示结束 -->
+<input type="hidden" id="hiddenid" th:value="${gid}">
+<div><table class="layui-hide" id="test" lay-filter="test"></table></div>
+
+<div class="city-introduction">
+    <p class="ci-recommend">绿蚂蚁物流搜索平台提供深圳到重庆物流专线专线发货服务，深圳到重庆物流公司，深圳到重庆货运公司，深圳到重庆运输公司，深圳到重庆专线，深圳到重庆专线物流，深圳到重庆专线公司，深圳到重庆物流，深圳到重庆物流发货等，涵盖了100家物流公司；绿蚂蚁物流搜索平台物流专线货运发货说走就走，以客为尊，以诚为本，信誉第一；为客户提供高质量的物流发货服务，与客户携手共进，合作双赢！绿蚂蚁物流搜索平台为您的物流发货保驾护航。</p>
+    <div class="ci-begin-city">
+        <div class="ci-bc-pic"><img src="http://www.lvmae.com/file/upload/road/28373_1.jpg" alt="深圳"></div>
+        <p class="ci-bc-text">深圳依托珠江三角洲，毗邻香港，是中国重要的口岸城市。经济发达，外商投资活跃，许多跨国企业纷纷来深发展，发展物流业的条件得天独厚。物流业已经成为深圳四大支柱产业之一，2016年深圳物流业增加值达1984.5亿元，占GDP比重约10.2%。2016年深圳港完成货物吞吐量2.1亿吨，集装箱吞吐量2398万标准箱，深圳机场完成货邮吞吐量113万吨，深圳物流业增加值达1984.5亿元，占GDP比重约10.2%，为服务全市经济社会持续全面发展作出了重要贡献。</p>
+    </div>
+    <div class="ci-end-city">
+        <p class="ci-ec-text">目前，重庆已被国家确定为全国性物流节点城市、西南物流区域核心城市和国家一级物流园区布局城市、国家现代物流创新试点城市、全国智慧物流配送示范城市，建设内陆国际物流枢纽，重庆正在提速。长江经济带西部中心枢纽、丝绸之路经济带战略支点、21世纪海上丝绸之路产业腹地……国家层面战略布局也为重庆发挥物流区域集聚辐射功能，提供了难得的发展机遇。</p>
+        <div class="ci-ec-pic"><img src="http://www.lvmae.com/file/upload/road/31700_2.jpg" alt="重庆"></div>
+    </div>
+</div>
+</body>
+
+<script th:inline="javascript">
+    $(function(){
+        fangfa();
+
+    })
+
+    function fangfa() {
+        var gid=$("#hiddenid").val();
+        layui.use('table', function () {
+            var table = layui.table;
+            table.render({
+                elem: '#test'
+                , url: '../ant/refertcom?gid='+gid
+                , cols: [
+                    [
+                        {type:'checkbox'},
+                        {field: 'wulliuxianlu',  minWidth: 100, title: '物流线路'}
+                        , {field: 'name',  minWidth: 100, title: '承运商'}
+                        , {field: 'qibujia ', width: 80, title: '起步价', sort: true}
+                        , {field: 'lightprice', width: 80, title: '重货'}
+                        , {field: 'heavyprice', title: '轻货',width: 80}
+                        , {field: 'shixiao', width: 80, title: '时效', sort: true}
+                    ]
+                ]
+            });
+        });
+    }
+
+    layui.use('table', function() {
+        var table = layui.table;
+        //监听表格复选框选择
+        table.on('checkbox(test)', function (obj) {
+            var xid=obj.data.id;
+            location.href="../ant/toadd?xid="+xid;
+        });
+    })
+</script>
+
+
+
+<script>
+
+    $(function() {
+        getTop();
+        findCity();
+
+    })
+
+
+
+
+    //导航条内容查询
+    function getTop() {
+        $.ajax({
+            url:'../ant/getTop',
+            type:'post',
+            success:function(data){
+
+
+                for(var i=0;i<=data.length;i++){
+                    //one=one+1;
+                    $("#"+i+"").html(data[i].name);
+                }
+
+            },
+            error:function(){
+                alert("导航条查询失败");
+            }
+        })
+    }
+
+
+    //分站条内容
+    function findCity(){
+        $.ajax({
+            url:'../ant/findCity',
+            type:'post',
+            success:function(data){
+
+                var str="";
+                for (var i=0;i<data.length;i++){
+                    str+="<font size='2'><a href=''>"+data[i].name+"&nbsp;&nbsp;&nbsp;&nbsp;"+"</a></font>";
+                    $("#spanId").html(str);
+                    if(i>13){
+                        $("#spanId").append("<font size='2'><a href=''>更多</a></font>");
+                        break;
+                    }
+                }
+
+            },
+            error:function(){
+                alert("查询分站城市失败");
+            }
+        })
+    }
+
+</script>
+
+
+<!-- 导航条脚本 -->
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+</script>
+<!-- 导航条脚本结束 -->
+
+
+
+
+</html>
