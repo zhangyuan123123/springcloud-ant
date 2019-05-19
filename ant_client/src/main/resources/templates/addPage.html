@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="/jquery-1.8.0.js"></script>
+<link rel="stylesheet" href="/layui/css/layui.css" />
+<link rel="stylesheet" href="/layui/css/modules/laydate/default/laydate.css">
+<script src="/layui/layui.all.js" charset="UTF-8"></script>
+<body>
+<form class="layui-form" id="formId">
+    <div class="layui-form-item">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <input type="text" name="biaoti" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">摘要</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea" name="zhaiyao"></textarea>
+        </div>
+    </div>
+
+    <!--<div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">内容</label>
+        <div class="layui-input-block">
+            <textarea class="layui-textarea layui-hide" name="neirong" lay-verify="content" id="LAY_demo_editor"></textarea>
+        </div>
+    </div>-->
+
+
+
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">开始日期</label>
+            <div class="layui-input-inline">
+                <input type="text" name="startDate" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-inline">
+            <label class="layui-form-label">结束日期</label>
+            <div class="layui-input-inline">
+                <input type="text" name="endDate" id="date1" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">所属行业</label>
+        <div class="layui-input-block">
+            <input type="text" name="hangye" lay-verify="title" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>
+
+    <!--<div class="layui-form-item">
+        <label class="layui-form-label">服务类型</label>
+        <div class="layui-input-block">
+            <input type="text" name="type" lay-verify="title" autocomplete="off" placeholder="请输入" class="layui-input">
+        </div>
+    </div>-->
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">所在城市</label>
+        <div class="layui-input-block">
+            <select name="chengshi">
+                <option value="0">请选择</option>
+                <option value="1">北京</option>
+                <option value="2">上海</option>
+                <option value="3">深圳</option>
+                <option value="4">南京</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn"  onclick="addzhaobiao()">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+</body>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+
+        //创建一个编辑器
+        //layedit.build('LAY_demo_editor');
+
+
+
+    });
+
+
+</script>
+<script>
+    //新增
+    function addzhaobiao(){
+        var formData=$("#formId").serialize();
+        console.log(formData)
+        $.ajax({
+            url:"/ant/addzhaobiao",
+            data:formData,
+            type:"post",
+            success:function(){
+                alert("新增成功");
+            },error:function () {
+                alert("新增失败");
+            }
+        })
+    }
+
+</script>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+</head>
+<script src="/jquery-1.8.0.js"></script>
+<link rel="stylesheet" href="/layui/css/layui.css" />
+<link rel="stylesheet" href="/layui/css/modules/laydate/default/laydate.css">
+<script src="/layui/layui.all.js" charset="UTF-8"></script>
+<body>
+
+<button class="layui-btn layui-btn-fluid" onclick="ruzhu()">我是承运商，我要入驻</button>
+<table class="layui-hide" id="test" lay-filter="tblist"></table>
+
+</body>
+<script>
+    $(function (){
+        index();
+    })
+    function index(){
+    layui.use(['table'], function(){
+        var table = layui.table;
+        table.render({
+            elem: '#test'
+            ,url:'../ant/getAll'
+            ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            ,id:'testReload'
+            ,limits : [3,5,7,9]
+            ,limit : 3
+            ,page:true
+            ,cols: [
+                [
+                    {field:'id',  title: 'ID', sort: true}
+                    ,{field:'name',  title: '用户名'}
+                    ,{field:'phone',  title: '联系方式'}
+                    ,{field:'dizhi',  title: '地址'}
+                    ,{field:'jianjie', title: '简介',} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                    ,{field:'type', title: '类型'}
+                    ,{field:'img',   title: '图片',
+                    templet:function (d) {
+                        return `<div class="layer-photos-demo" onclick="img_click()" style="cursor:pointer;">
+                                      <img layer-pid="imgId"  layer-src="/images/bug-success-bg.jpg" src="/111.jpg" alt="加载中...">
+                                    </div>`;
+                    }
+                    }
+                    ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}
+                ]
+            ]
+        });
+        //通过添加监听
+        table.on('tool(tblist)', function(obj) {
+             data = obj.data;
+            //然后data.你的值就可以了
+            //alert(data.id);
+        })
+
+    });
+    }
+    var data;
+
+
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="detail" href="javascript:anniu(data.id)">查看详情</a>
+</script>
+
+<script>
+
+    function anniu(id){
+        alert(id);
+        location.href="../ant/tofindPage?id="+id;
+    }
+
+    //承运商入驻
+    function ruzhu(){
+        //alert("网络延迟，稍后请重试");
+        //在这里面输入任何合法的js语句
+        layer.open({
+            type: 1 //Page层类型
+            ,area: ['500px', '300px']
+            ,title: '你好，layer'
+            ,shade: 0.6 //遮罩透明度
+            ,maxmin: true //允许全屏最小化
+            ,anim: 1 //0-6的动画形式，-1不开启
+            ,content: '<div style="padding:50px;">网络延迟，稍后请重试</div>'
+        });
+    }
+
+
+</script>
+</html>

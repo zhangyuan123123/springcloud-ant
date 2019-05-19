@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="/jquery-1.8.0.js"></script>
+<link rel="stylesheet" href="/layui/css/layui.css" />
+<link rel="stylesheet" href="/layui/css/modules/laydate/default/laydate.css">
+<script src="/layui/layui.all.js" charset="UTF-8"></script>
+<body>
+<input type="hidden" id="id" th:value="${id}">
+<!--第一个-->
+<div style="width: 900px;height: 300px;background-color: #eaeaea;margin-left: 500px">
+<table class="layui-hide" id="test" lay-filter="tblist" lay-skin="nob" style="width: 900px;height: 200px"></table>
+
+<table class="layui-hide" id="test2" lay-filter="tblist" lay-skin="nob" style="width: 900px;height: 200px"></table>
+
+</div>
+<!--第二个-->
+<div style="width: 900px;height: 500px;background-color: #eaeaea;margin-left: 500px">
+    <div class="layui-tab" lay-filter="test">
+        <ul class="layui-tab-title">
+
+            <li lay-id="22">货车时刻表</li>
+            <li lay-id="33">发车历史</li>
+            <li lay-id="44">位置地图</li>
+            <li lay-id="55">企业展示</li>
+            <li lay-id="66">企业介绍</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item">暂无相关数据</div>
+            <div class="layui-tab-item">
+                暂无相关数据
+
+
+            </div>
+            <div class="layui-tab-item">
+                <img src="../111.jpg" height="413" width="881"/>
+            </div>
+            <div class="layui-tab-item">
+                <img src="http://www.lvmae.com/skin/default/images/wlgxxqy.jpg" style="width:881px;height: 400px">
+            </div>
+            <div class="layui-tab-item">
+                <span id="jieshao">
+    深圳市银泰深物流有限公司成立于2012年，公司现注册资本301万元，国家“AAAA级物流企业”，金融评级部门“AAA级信用企业”，公司是国内专业的仓储、物流、供应链服务提供商。为各行业客户提供综合物流整体解决方案。具备在全国范围内为合作伙伴提供一站式、一体化、个性化的综合物流和供应链外包服务。目前是通信领域专业物流服务骨干企业。为中国移动等上市企业仓储托管与物流订制外包服务，可通过美国最严格的塞班斯（SOX）法案和中国审计署、财政部、证监会等部门巜企业内部控制基本控制规范》的审核要求。
+
+      公司总部设立在深圳，拥有上千名员工，70多个城市设有仓储托管和供应链管理服务团队，管理仓库面积70多万平方米，物流服务网络遍布全国17省，70多个地级市。公司一直致力于成为合作伙伴最优秀的专业仓储、物流、供应链服务提供商，推动合作企业供应链管理创新，帮助合作企业提高竞争力。
+
+      为了提升管理运营质量和服务能力，银泰深物流持续升级信息系统，积极使用前沿物流管理技术和IT信息技术。
+
+      良好的社会声誉、专业敬业的员工队伍、遍布全国的物流服务网络、充足的仓储管理资源和现代物流与信息技术的大力应用，使银泰深物流成为优秀的现代综合物流服务商。并取得了巜中国仓储服务金牌企业》和巜质押监管优秀企业》等称号。
+
+1、银泰深物流的核心价值——诚信；
+
+2、企业的经营宗旨——成就、使命、快乐；
+
+3、银泰深物流的产品价值体现——安全、快速、环保；
+
+4、银泰深物流的品牌主张——我的专享通道；
+
+5、企业管理的行动纲领——八字方针：干净、效率、透明、规矩
+
+    1）干净银泰深——环境干净；做人做事干净。
+
+    2）效率银泰深——简化操作，通过一系列的改革，提升运作效能。
+
+    3）透明银泰深——凡事透明公开，执行阳光化政策。
+
+    4）规矩银泰深——注重制度、流程建设，做到事事有法可依，突出责任。
+
+6、银泰深物流将所服务的客户、公司员工以及物流提供商统一纳入客户的范畴，为其提供VIP的金牌服务。
+
+    1）对于所服务的客户，银泰深物流为客户提供更加便捷、优质的服务，这是客户持续选择银泰深提供服务的基础和保证；
+
+    2）对于银泰深物流的员工，坚持双向选择，确保双方之间的合理兼顾。银泰深物流为员工提供像服务真正客户一般优质的服务，着力提升为员工“服务”的水平，提高员工的福利水平。
+
+    3）“客户”的概念还包含了物流服务供应商，每一位提供商都与银泰深物流有着良好的伙伴关系，银泰深物流与每一位物流服务供应商共进步、目前，国内直营与合作网点达到1000余家，遍布全国各省、市、区。
+
+公司服务标准：
+
+1:热情友好、方便周到、安全快捷准时。
+
+2:服务目标：让客户“省时，省事，省钱，省心”。
+
+3:服务特色：市内上门服务，提供各种各种货物包装。
+您只需一个电话，剩下的事由我们来做！与我们相识，就是您拥有一切放心的开始…… 随着公司的业务扩展，在全国多个城市设立办事处，并与国内多家运输公司建立了联运业务，使公司不断朝集团化、规模化方向发展。同时，与中国平安保险密切合作，确保货物安全运输，保证客户财产不受损失！一握飞腾手 永远是朋友！
+公司办理：深圳至河南全境，河北，北京，天津，江苏，深圳，浙江，山东，山西，山西，新疆，青海等全国各地整车零担，方便快捷，安全无忧请联系
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!--第三个-->
+<div style="width: 900px;height: 100px;background-color: #eaeaea;margin-left: 500px">
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+
+        <li>成交记录</li>
+
+    </ul>
+    <div class="layui-tab-content" style="height: 100px;">
+
+        <div class="layui-tab-item">暂无记录</div>
+
+    </div>
+</div>
+
+</div>
+
+
+</body>
+<script>
+    var id=$("#id").val();
+    //alert(id);
+    $(function (){
+        index(id);
+        index2(id);
+    })
+    function index(id){
+        //alert(id);
+        layui.use('table', function(){
+            var table = layui.table;
+            table.render({
+                elem: '#test'
+                ,url:'../ant/getAll?id='+id
+                //,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                ,id:'testReload'
+                ,cols: [
+                    [
+                        ,{field:'name',  title: '用户名'}
+                        ,{field:'phone',  title: '联系方式'}
+                        ,{field:'dizhi',  title: '地址'}
+                        ,{field:'jianjie',title: '简介'} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                        ,{field:'zongzhi', title: '服务宗旨'}
+                    ]
+                ]
+            });
+
+        });
+    }
+
+    function index2(id){
+        //alert(id);
+        layui.use('table', function(){
+            var table = layui.table;
+            table.render({
+                elem: '#test2'
+                ,url:'../ant/getXiang?id='+id
+                ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                ,id:'testReload'
+                ,cols: [
+                    [
+                        ,{field:'zijin',  title: '资金'}
+                        ,{field:'shuliang',  title: '员工数量'}
+                        ,{field:'zhongduan',  title: '终端配送中心'}
+                        ,{field:'ganxian', title: '干线运输车辆数量',} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                        ,{field:'zerenxian', title: '承运人责任险',}
+                        ,{field:'chaxun', title: '网上订单查询跟踪系统',}
+                        ,{field:'nianxian', title: '成立年限',}
+                        ,{field:'cangchu', title: '始发站仓储面积',}
+                        ,{field:'carshu', title: '自有提送货车辆数量',}
+                        ,{field:'gpsshu', title: '装有GPS车辆数量',}
+                        ,{field:'liucheng', title: '现场作业流程',}
+                    ]
+                ]
+            });
+
+        });
+    }
+
+
+
+
+</script>
+</html>
