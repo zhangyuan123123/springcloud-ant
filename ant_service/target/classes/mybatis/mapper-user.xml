@@ -3,7 +3,51 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.mapper.AntMapper">
-    <select id="refer" resultType="java.lang.String">
-  select jobname from job where jobid=1
+
+<select id="getprovinces" resultType="java.util.HashMap">
+    select * from t_area where pid=0 and id&lt;&gt;0
+</select>
+
+    <select id="getcity" resultType="java.util.HashMap">
+    select * from t_area where pid=#{cid} and id&lt;&gt;0
+</select>
+
+    <select id="getcounty" resultType="java.util.HashMap">
+    select * from t_area where pid=#{cid} and id&lt;&gt;0
+</select>
+    
+    <insert id="addsubmit">
+        insert into deliverylist (origin,provenance,contact,phone,nameCommodity,cargoInformation,gongsiid,status) values
+        (#{origin},#{provenance},#{contact},#{phone},#{nameCommodity},#{cargoInformation},#{gongsiid},1)
+    </insert>
+    
+    <select id="refer" resultType="com.jk.model.GongSiModel">
+        select * from t_company limit #{page},#{limit}
+    </select>
+
+<select id="count" resultType="java.lang.Long">
+select count(*) from t_company
+</select>
+    
+    <select id="referline" resultType="com.jk.model.LineModel">
+       select * from lineslist limit #{page},#{limit}
+    </select>
+
+    <select id="countline" resultType="java.lang.Long">
+      select count(*) from lineslist
+    </select>
+
+    <select id="refertcom" resultType="com.jk.model.DataModel">
+        select l.id,l.wulliuxianlu,t.name,t.qibujia,t.lightprice,t.heavyprice,t.shixiao from t_company t inner join lineslist l on t.id=l.gongsiid
+        where l.id=#{gid}
+    </select>
+    
+    <select id="countcom" resultType="java.lang.Long">
+      select count(*) from t_company t inner join lineslist l on t.id=l.gongsiid
+    </select>
+
+    <select id="referall" resultType="com.jk.model.SupperModel">
+      select l.gongsiid,c.chufadi,c.shifadi from lineslist l inner join xianlu_chufadishifadi x on l.id=x.xianluid
+      inner join chufaandshifa c on c.id=x.chufadishifadi where l.id=#{xid}
     </select>
 </mapper>
