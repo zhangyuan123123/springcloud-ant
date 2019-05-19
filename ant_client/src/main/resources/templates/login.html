@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="shortcut icon" href="favicon.ico"/>
+<link rel="bookmark" href="favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="http://www.lvmae.com/skin/default/index.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.lvmae.com/skin/default/index_plus.css"/>
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="http://www.lvmae.com/skin/default/ie6.css"/>
+<![endif]-->
+<!--[if IE]>
+<style type="text/css">
+    .head_user em {margin:-4px 0 0 -4px;}
+    #profile {margin:20px 0 0 -140px;}
+</style>
+<![endif]-->
+<style type="text/css">
+    body{
+        background:url('');
+    }
+</style>
+<script type="text/javascript">window.onerror= function(){return true;}</script><script type="text/javascript" src="http://www.lvmae.com/lang/zh-cn/lang.js"></script>
+<script type="text/javascript" src="http://www.lvmae.com/file/script/config.js"></script>
+<script type="text/javascript" src="http://www.lvmae.com/file/script/jquery.js"></script>
+<script type="text/javascript" src="http://www.lvmae.com/file/script/common.js"></script>
+<script type="text/javascript" src="http://www.lvmae.com/file/script/admin.js"></script>
+<script type="text/javascript" src="http://www.lvmae.com/file/script/member.js"></script>
+<body>
+<div class="aspNetHidden">
+</div>
+<div style="display:none;">
+
+</div>
+<div style="display: none">
+    <iframe id="readCookie" name="readCookie" src=""></iframe>
+</div>
+<div class="index_container">
+    <!--顶部-->
+    <div class="regis_top">
+        <a href="#" class="regis_logo" title="绿蚂蚁快递"><img src="http://www.lvmae.com/skin/default/image/logo_regis.jpg" alt="绿蚂蚁LOGO"></a>
+        <p>绿蚂蚁 | 会员登录</p>
+    </div><script type="text/javascript">var height_top=450;</script>
+    <script type="text/javascript" src="http://www.lvmae.com/file/script/login.js"></script>
+    <!--中部-->
+    <div class="index_con regis_main">
+        <div class="login_container">
+            <p class="mid"><img src="http://www.lvmae.com/skin/default/image/login_h.jpg" alt="绿蚂蚁-用户登录"></p>
+            <form    id="loginff">
+                <input name="forward" type="hidden" id="forward" value="http://www.lvmae.com/road/deliver.html">
+                <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input name="account" th:value="${account}" type="text" id="username"   class="inp_grey  tipInput" placeholder="请输入手机号" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="password" th:value="${password}" type="password" id="password" class="inp_grey tipInput" placeholder="请输入密码" style="color: black; display: inline-block;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="phoneButId" type="button" class="btn_login"  onclick="apendPhone()"  value="手机验证" style="color: white; display: inline-block;width:80px">
+                            <input id="emailButId" type="button" class="btn_login"  onclick="apendEmail()"  value="邮箱验证" style="color: white; display: inline-block;width:80px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span id="textId"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="login_auto">
+                            <a href="send.php">忘记密码?</a>
+                            <input type="checkbox" th:checked="${password}==null?'false':'checked'"  name="getIsChecked" value="1" />记住密码
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" onclick="login()" value="登 录 " class="btn_login" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="red" id="errorMess"></span></td>
+                    </tr>
+                    </tbody></table>
+            </form>
+            <p class="regis_Add">还没有绿蚂蚁账户？<a href="javascript:;" onclick="addUser()">注册</a></p>
+        </div>
+        <div class="regis_ad">
+
+            <div class="carousel">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clear"></div>
+<script type="text/javascript">
+    $('#username,#password').focus(function(){
+        $(this).attr('placeholder','');
+    });
+    $('#username,#password').blur(function(){
+        var input_val='';
+        if($(this).attr('id')=='username'){
+            input_val='请输入手机号';
+        }else if($(this).attr('id')=='password'){
+            var input_val='请输入密码';
+        }
+        $(this).attr('placeholder',input_val);
+    });
+    if(Dd('username').value == '') {
+        Dd('username').focus();
+    } else {
+        Dd('password').focus();
+    }
+    function Dcheck() {
+        if(Dd('username').value == '') {
+            confirm('请输入登录名称');
+            Dd('username').focus();
+            return false;
+        }
+        if(Dd('password').value == '') {
+            confirm('请输入密码');
+            Dd('password').focus();
+            return false;
+        }
+    }
+</script>
+<div class="bottom">
+    <!--底部-->
+    <div class="bottom" id="bottomId">
+        <div class="index_container index_container_big" id="BottomWrap">
+            <div class="contact_bottom">
+                <p>客服电话</p>
+                <b>400-963-5600</b>
+                <p>
+                    <a id="t-weibo" href="http://t.qq.com/lvmae56" title="绿蚂蚁腾讯微博" target="_blank" rel="nofollow">绿蚂蚁腾讯微博</a>
+                    <a id="s-weibo" href="http://weibo.com/lvmae" title="绿蚂蚁新浪微博" target="_blank" rel="nofollow">绿蚂蚁新浪微博</a>
+                </p>
+            </div>
+            <div class="btn_bottom">
+                <h4>关于绿蚂蚁</h4>
+                <a href="http://www.lvmae.net/show-9-2-1.html" target="_blank" rel="nofollow" title="绿蚂蚁介绍">绿蚂蚁介绍</a>
+                <a href="http://www.lvmae.net/list-10-1.html" target="_blank" rel="nofollow" title="大事记">大事记</a>
+                <a href="http://www.lvmae.net/list-14-1.html" target="_blank" rel="nofollow" title="公司动态">公司动态</a>
+                <a href="http://www.lvmae.net/list-13-1.html" target="_blank" rel="nofollow" title="媒体报道">媒体报道</a>
+                <a href="http://www.lvmae.net/show-9-3-1.html" target="_blank" rel="nofollow" title="联系我们">联系我们</a>
+            </div>
+            <div class="btn_bottom">
+                <h4>绿蚂蚁旗下网站</h4>
+                <a href="http://www.lvmae.net/" target="_blank" title="绿蚂蚁官网">绿蚂蚁官网</a>
+                <a href="http://www.lvmae.com/" target="_blank" title="绿蚂蚁物流">绿蚂蚁物流</a>
+                <a href="http://kuaidi.lvmae.com/" target="_blank" title="绿蚂蚁快递">绿蚂蚁快递</a>
+                <a href="http://news.lvmae.com/" target="_blank" title="绿蚂蚁资讯">绿蚂蚁资讯</a>
+                <a href="http://ask.lvmae.com/" target="_blank" title="绿蚂蚁问答">绿蚂蚁问答</a>
+            </div>
+            <div class="btn_bottom">
+                <h4>绿蚂蚁物流</h4>
+                <a target="_blank" href="http://www.lvmae.com/" title="查物流">查物流</a>
+                <a target="_blank" href="http://www.lvmae.com/" title="物流搜索">物流搜索</a>
+                <a target="_blank" href="http://www.lvmae.com/road/gongsi" title="物流公司查询">物流公司查询</a>
+                <a target="_blank" href="http://www.lvmae.com/road/" title="公路物流查询">公路物流查询</a>
+                <a target="_blank" href="http://www.lvmae.com/" title="物流查询">物流查询</a>
+            </div>
+            <div class="btn_bottom">
+                <h4>绿蚂蚁快递</h4>
+                <a href="http://kuaidi.lvmae.com/" target="_blank" title="快递查询">快递查询</a>
+                <a href="http://kuaidi.lvmae.com/kuaidiyuan" target="_blank" title="附近快递员">附近快递员</a>
+                <a href="http://kuaidi.lvmae.com/kddh.html" target="_blank" title="快递电话">快递电话</a>
+                <a href="http://kuaidi.lvmae.com/kdwd.html" target="_blank" title="快递网点分布">快递网点分布</a>
+                <a href="http://kuaidi.lvmae.com/kdjg.html" target="_blank" title="快递费用查询">快递费用查询</a>
+            </div>
+            <div class="code_scan">
+                <img src="http://www.lvmae.com/skin/default/image/app_down.jpg" alt="绿蚂蚁二维码">
+                <p>扫一扫二维码</p>
+                <p>下载绿蚂蚁客户端</p>
+            </div>
+            <p class="statement">Copyright © 2015 绿蚂蚁物流搜索平台 All rights reserved. 粤ICP备14032800号-1&nbsp;&nbsp;</p>
+            <p class="statement" ><a  key ="55cb19b7efbfb03c90332072"  logo_size="124x47"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org/static/outer/js/aq_auth.js"></script></a></p>
+            <!--返回顶部右侧屏幕底部-->
+            <div class="back_to_up">
+                <a href="javascript:void(0);" title="返回顶部" id="backTop"><img src="http://www.lvmae.com/skin/default/image/back_to_up.jpg"></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+
+    function apendPhone() {
+      var str='<input type="text" id="phone" name="phone" placeholder="请输入手机号" class="inp_grey tipInput"><br/>' +
+              '&nbsp;<input type="button" id="phoneBtn" style="color: white; display: inline-block;width:80px" onclick="checkPhone()" class="btn_login"  value="发送验证码">&nbsp;&nbsp;'+
+          '<input type="text" style="width:100px" name="phoneCode" placeholder="请输入验证码" class="inp_grey tipInput">';
+      $("#textId").html(str);
+    }
+    function apendEmail() {
+        var str='<input type="email" id="email" name="email" placeholder="请输入邮箱" class="inp_grey tipInput"><br/>' +
+            '&nbsp;<input type="button" id="emailBtn" style="color: white; display: inline-block;width:80px" onclick="checkEmail()" class="btn_login"  value="发送验证码">&nbsp;&nbsp;'+
+            '<input type="text" style="width:100px" name="emailCode" placeholder="请输入验证码" class="inp_grey tipInput">';
+        $("#textId").html(str);
+    }
+    function getPhoneCode(){
+           var phoneName=$("#phone").val();
+        $.ajax({
+            url:"../ant/getPhoneCode",
+            type:"post",
+            data:{phoneName:phoneName},
+            success:function(data){
+                //1 发送成功  2 最多发送3次,您已被加入黑名单  3 该手机号被拉入黑名单 不能发送短信
+                alert(data);
+                if(data==1){
+                    alert("发送成功")
+                }else if(data==2){
+                    alert("今日已发送三次，系统将您自动拉入黑名单")
+                }else if(data==3){
+                    alert("该手机号被拉入黑名单 不能发送短信")
+                }
+
+            },error:function(){
+                alert("错误！！！");
+            }
+        });
+    }
+
+    function getEmailCode(){
+        var emailName=$("#email").val();
+        $.ajax({
+            url:"../ant/getEmailCode",
+            type:"post",
+            data:{emailName:emailName},
+            success:function(data){
+                //1 发送成功  2 最多发送3次,您已被加入黑名单  3 该手机号被拉入黑名单 不能发送短信
+                if(data==1){
+                    alert("发送成功")
+                }else if(data==2){
+                    alert("今日已发送三次，系统将您自动拉入黑名单")
+                }else if(data==3){
+                    alert("该手机号被拉入黑名单 不能发送短信")
+                }
+                alert(data);
+            },error:function(){
+                alert("错误！！！");
+            }
+        });
+    }
+    function login(){
+        $.ajax({
+            url:"../ant/login",
+            type:"post",
+            data:$("#loginff").serialize(),
+            success:function(data){
+              alert(data);
+                alert(data.id);
+              if(data.flg==1){
+                  if(data.position==1){
+                      alert("普通用戶登录成功");
+                      location.href="../ant/tomaeBackstage?name="+data.name+"&id="+data.id;
+                  }else{
+                      alert("管理员登录成功");
+                      location.href="../ant/toadministrator";
+                  }
+
+              }else if(data.flg==2){
+                  alert("验证码错误");
+              }else if(data.flg==3){
+                  alert("账号或密码错误");
+              }else if(data.flg==4){
+                  alert("请使用验证码登录");
+              }
+            },error:function(){
+                alert("错误！！！");
+            }
+        });
+    }
+    function checkPhone(){
+        var phone = document.getElementById('phone').value;
+        if(!(/^1(3|4|5|7|8)\d{9}$/.test(phone))){
+            alert("手机号码有误，请重填");
+            return false;
+        }else{
+            sendphone();
+        }
+    }
+    function checkEmail(){
+        var emailValue=document. getElementById("email").value;
+        ;
+        if(!(/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/.test(emailValue))){
+            alert("邮箱地址有误，请重填");
+            return false;
+        }else{
+            sendemail();
+        }
+    }
+
+    var countdown=60;
+    function sendemail(){
+        var obj = $("#emailBtn");
+        getEmailCode();
+        settime1(obj);
+    }
+    function settime1(obj) { //发送验证码倒计时
+        if (countdown == 0) {
+            obj.attr('disabled',false);
+            //obj.removeattr("disabled");
+            obj.val("发送验证码");
+            countdown = 60;
+            return;
+        } else {
+            obj.attr('disabled',true);
+            obj.val("重新发送(" + countdown + ")");
+            countdown--;
+        }
+        setTimeout(function() {
+                settime1(obj) }
+            ,1000)
+    }
+    function sendphone(){
+        var obj = $("#phoneBtn");
+        settime2(obj);
+        getPhoneCode();
+    }
+    function settime2(obj) { //发送验证码倒计时
+        if (countdown == 0) {
+            obj.attr('disabled',false);
+            //obj.removeattr("disabled");
+            obj.val("发送验证码");
+            countdown = 60;
+            return;
+        } else {
+            obj.attr('disabled',true);
+            obj.val("重新发送(" + countdown + ")");
+            countdown--;
+        }
+        setTimeout(function() {
+                settime2(obj) }
+            ,1000)
+    }
+    function addUser(){
+     location.href="../ant/tozucePage";
+    }
+</script>
+</html>

@@ -1,21 +1,15 @@
 package com.jk.util;
 
-import com.aliyun.oss.ClientException;
-import com.aliyun.oss.HttpMethod;
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.OSSException;
-import com.aliyun.oss.model.GeneratePresignedUrlRequest;
-import com.aliyun.oss.model.OSSObject;
 import com.aliyun.oss.model.ObjectMetadata;
+import com.netflix.client.ClientException;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 public class OssFileUtils {
     private static String endpoint = "oss-cn-beijing.aliyuncs.com";
