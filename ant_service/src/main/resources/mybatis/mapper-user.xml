@@ -4,4 +4,40 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jk.mapper.AntMapper">
 
+    <!-- 获取导航条内容 -->
+    <select id="getTop" resultType="com.jk.bean.Top">
+        select * from t_top
+    </select>
+
+
+    <!-- 分站城市查询 findCity -->
+    <select id="findCity" resultType="com.jk.bean.City">
+        select * from t_area where pid=0 and id!=0
+    </select>
+
+    <select id="getprovinces" resultType="java.util.HashMap">
+    select * from t_area where pid=0 and id&lt;&gt;0
+    </select>
+
+    <select id="getcity" resultType="java.util.HashMap">
+    select * from t_area where pid=#{cid}
+    </select>
+
+    <select id="getcounty" resultType="java.util.HashMap">
+    select * from t_area where pid=#{cid}
+    </select>
+
+
+    <!-- 公司查询 -->
+    <select id="findCompany" resultType="java.lang.Integer">
+        select t.id from t_company t where t.name=#{name}
+    </select>
+
+
+    <!-- 线路和专线查询，返回公司ID -->
+    <select id="findGsId" resultType="java.lang.Long">
+        select li.gongsiid from deliverylist de inner join lineslist li on de.xianluid=li.id
+        where de.origin=#{origin} and de.provenance=#{provenance}
+    </select>
+
 </mapper>

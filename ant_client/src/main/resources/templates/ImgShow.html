@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table class="layui-hide" id="heimingdantable"  lay-filter="tblist"></table>
+</body>
+
+<script type="text/javascript">
+
+    $(function(){
+
+        findOssImg();
+
+    })
+
+
+    function findOssImg(){
+        layui.use('table', function(){
+            var table = layui.table;
+            //第一个实例
+            table.render({
+                elem: '#heimingdantable'
+                ,height: 312
+                ,url: '../ant/findhei' //数据接口
+                ,page: true //开启分页
+                ,limit:4
+                ,limits:[4,6,8]
+                ,cols: [
+                    [ //表头
+                         {field: 'username', title: '用户名', width:140}
+                        ,{field: 'account', title: '账号', width:200}
+                        ,{field: 'password', title: '密码', width:200}
+                        ,{field: 'phone', title: '手机号', width:200}
+                        ,{field: 'email', title: '邮箱', width:200}
+                        ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}
+                    ]
+                ],
+            })
+    }
+</script>
+
+</html>
