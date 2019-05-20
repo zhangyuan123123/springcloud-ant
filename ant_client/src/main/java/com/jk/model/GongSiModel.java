@@ -11,4 +11,8 @@ public class GongSiModel {
     private String jianjie;
     private String type;
     private String img;
+    private Integer lightprice;
+    private Integer heavyprice;
+    private Integer qibujia;
+    private String shixiao;
 }

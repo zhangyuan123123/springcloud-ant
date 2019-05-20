@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="../js/layui/css/layui.css" />
+<link rel="stylesheet" href="../js/layui/css/modules/laydate/default/laydate.css">
+<link rel="stylesheet" href="../js/layui/css/layui.css"  media="all">
+<script type="text/javascript" src="../js/layui/layui.js"></script>
+<script src="../js/layui/layui.all.js" charset="UTF-8"></script>
+
+<style>
+    * {
+        position: relative;
+    }
+
+    .header, .wrap,    .block-wrapper  .block-wrapper  .section-2 .section-2   .active-list .item,  .fw-list .item    {
+        zoom: 1;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .top {
+        position: relative;
+        z-index: 200;
+        height: 30px;
+        border-bottom: 1px solid #eaeaea;
+        color: #969696;
+    }
+    .header{
+        text-align: center;
+    }
+    .header {
+        background-color: #fff;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    .top-right .top-area, .top-right .tel-app {
+        position: relative;
+    }
+    .top-left, .top-right .item-list .item,   .block-wrapper h3   , .jy-list .item, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list  .partner-list .item , .search-road strong, .search-road label, .search-road select  , .send-reply strong, .send-reply label, .send-reply select , .top-right, .top-right .item-list, dl.dl1 dt a  {
+        display: inline;
+    }
+    .top-left, .top-right .item-list .item,   .block-wrapper h3    , .jy-list .item,   .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .partner-list .item  , .search-road strong, .search-road label, .search-road select  , .send-reply strong, .send-reply label, .send-reply select  {
+        float: left;
+    }
+    .top-right, .top-right .item-list, dl.dl1 dt     {
+        float: right;
+    }
+    .top-left, .top-right {
+        width: 50%;
+        line-height: 30px;
+    }
+    .top-right .item-list .item {
+        position: relative;
+        margin-left: 3px;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    .icons-wx {
+        background-position: -62px -56px;
+        height: 16px;
+        width: 21px;
+    }
+
+    .icons-arrow-down {
+        background-position: -34px -56px;
+        height: 12px;
+        width: 12px;
+    }
+    .icons-photo {
+        background-position: -275px -56px;
+        height: 18px;
+        width: 11px;
+    }
+    .icons-position {
+        background-position: -145px -56px;
+        height: 16px;
+        width: 11px;
+    }
+
+    .icons-wx {
+        width: 21px;
+        height: 16px;
+    }
+    .icons-arrow-down {
+        width: 12px;
+        height: 12px;
+    }
+    .icons-photo {
+        width: 11px;
+        height: 18px;
+    }
+    .icons-position {
+        width: 11px;
+        height: 16px;
+    }
+    .main-color {
+        color: #72b111;
+    }
+    .top-right span, .top-right a{
+        display: inline-block;
+    }
+    a:visited {
+        color: #72b111;
+    }
+    .top a {
+        margin-left: 5px;
+    }
+    .top-right span, .top-right a {
+        vertical-align: middle;
+    }
+    .top-right a {
+        color: #969696;
+    }
+    .icons-qq {
+        background-position: -115px -56px;
+        height: 16px;
+        width: 14px;
+    }
+    .top-right .dropdown-box {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        height: 29px;
+        line-height: 28px;
+        border: 1px solid #fff;
+        border-bottom: none;
+        background-color: #fff;
+        z-index: 11;
+        cursor: pointer;
+    }
+    .top-right .menu {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        width: 63px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        z-index: 10;
+        color: #818181;
+        font-size: 12px;
+    }
+    .top-right .top-wx .menu {
+        width: 127px;
+    }
+    .top-right .ewm-box {
+        padding: 10px 15px 15px 15px;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .top-right .menu img {
+        vertical-align: top;
+    }
+    .top-right .ewm-box img {
+        margin-top: 5px;
+    }
+    .top-right .tel-app .menu {
+        width: 127px;
+    }
+    .top-right .top-area-content span {
+        display: block;
+        height: 29px;
+        line-height: 29px;
+        padding: 0 5px;
+        text-align: center;
+    }
+
+
+    #dul>li {
+        float: none !important;
+        display: block !important;
+
+    }
+    .demo1{
+        float: left;
+    }
+    .demo2{
+        float: right;
+
+    }
+
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    .header, .footer, .frendlink, .flow-box, .block-wrapper {
+        text-align: center;
+    }
+    .footer {
+        margin: 36px 0  40px 0;
+        text-align: center;
+        color: #a1a1a1;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    .clearfix, .header, .wrap, .frendlink, .frendlink .link-content, .banner-box, .flow-box, .block-wrapper, .block-wrapper .block-header, .block-wrapper .block-body, .section-1, .section-2, .section-2 .section-left, .section-2 .area-box, .jy-list, .banchi, .active-list .item, .teijia-list, .com-list, .wuliu-list, .fw-list .item, .partner-list, .areas-box .tab-title, .areas-box .area-content {
+        zoom: 1;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .footer p {
+        margin: 16px 0;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    a:visited {
+        color: #72b111;
+    }
+    .footer a {
+        color: #666;
+    }
+    .sitemap-a a {
+        color: #ddd;
+    }
+    .footer span.line {
+        margin: 0 15px;
+    }
+
+
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    .clearfix, .header, .wrap, .frendlink, .frendlink .link-content, .banner-box, .flow-box, .block-wrapper, .block-wrapper .block-header, .block-wrapper .block-body, .section-1, .section-2, .section-2 .section-left, .section-2 .area-box, .jy-list, .banchi, .active-list .item, .teijia-list, .com-list, .wuliu-list, .fw-list .item, .partner-list, .areas-box .tab-title, .areas-box .area-content {
+        zoom: 1;
+    }
+    .header, .footer, .frendlink, .flow-box, .block-wrapper {
+        text-align: center;
+    }
+    .block-wrapper {
+        margin: 15px auto;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .block-wrapper .block-header {
+        height: 46px;
+        border-bottom: 2px solid #72b111;
+        color: #676767;
+    }
+    .block-wrapper .block-content {
+        border: 1px solid #eaeaea;
+        background-color: #fff;
+    }
+    .dongtai .block-content {
+        height: 300px;
+    }
+    .fl, .top-left, .top-right .item-list .item, .nav ul li, .flow-box ul li, .flow-box .text-box, .block-wrapper h3, .block-wrapper .tab-title, .block-wrapper .tab-title .tab-item, .section-1 .section-left, .section-2 .section-left, .section-2 .section-right, .section-2 .area-1, .section-2 .area-2, .section-4, .section-5, .section-6, .jy-list .item, .banchi .banchi-left, .banchi .banchi-middle, .banchi .banchi-right, .active-list .active-img, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .item-icon, .partner-list .item, .areas-box .tab-item, .search-box .search-content, .search-box .search-aside, .search-road strong, .search-road label, .search-road select, .search-road .btn, .send-reply strong, .send-reply label, .send-reply select, .send-reply .btn, .fr, .top-right, .top-right .item-list, dl.dl1 dt a.more, .section-1 .section-right, .section-2 .area-3 {
+        display: inline;
+    }
+    .fl, .top-left, .top-right .item-list .item, .nav ul li, .flow-box ul li, .flow-box .text-box, .block-wrapper h3, .block-wrapper .tab-title, .block-wrapper .tab-title .tab-item, .section-1 .section-left, .section-2 .section-left, .section-2 .section-right, .section-2 .area-1, .section-2 .area-2, .section-4, .section-5, .section-6, .jy-list .item, .banchi .banchi-left, .banchi .banchi-middle, .banchi .banchi-right, .active-list .active-img, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .item-icon, .partner-list .item, .areas-box .tab-item, .search-box .search-content, .search-box .search-aside, .search-road strong, .search-road label, .search-road select, .search-road .btn, .send-reply strong, .send-reply label, .send-reply select, .send-reply .btn {
+        float: left;
+    }
+    .section-5 {
+        width: 235px;
+    }
+    .dongtai .section-5 {
+        width: 249px;
+        height: auto;
+    }
+    .section-6 {
+        width: 195px;
+    }
+    .dongtai .section-6 {
+        position: relative;
+        width: 440px;
+        height: auto;
+        border-left: 1px dotted #bdbdbd;
+    }
+    .t-1 {
+        height: 50px;
+        line-height: 50px;
+        color: #6b6b6b;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .partner .t-1 {
+        position: absolute;
+        top: -50px;
+        left: 12px;
+        font-size: 16px;
+    }
+    .partner-list .item {
+        position: relative;
+        width: 120px;
+        height: 38px;
+        margin: 28px 10px 0 15px;
+        text-align: center;
+        border-right: 1px dashed #e0e0e0;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    img {
+        display: inline-block;
+        border: 0 none;
+    }
+    a img {
+        border: none;
+    }
+    .dongtai-list {
+        margin: 15px;
+    }
+    .dongtai-list .item {
+        height: 26px;
+        line-height: 26px;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .li_icon {
+        padding: 0px 5px;
+        background-color: #ffb90f;
+        margin-right: 10px;
+        color: #fff;
+    }
+    .dongtai-list a {
+        color: #6b6b6b;
+    }
+    .block-wrapper h3 {
+        float: left;
+        width: 290px;
+        line-height: 46px;
+        text-indent: 20px;
+    }
+
+
+
+</style>
+
+<body>
+
+<div class="header"><div class="top"><div class="wrap">
+    <div class="top-left">
+        您好，欢迎使用绿蚂蚁干线物流B2B平台！<a href="http://www.lvmae.com/member/login.php" rel="nofollow">登录</a><a href="http://www.lvmae.com/member/register.php" rel="nofollow">注册</a>
+    </div>
+    <div class="top-right">
+        <ul class="item-list">
+            <li class="item">当前城市：</li>
+            <li class="item top-area dropdown">
+                <div class="top-area-content dropdown-box">
+                    <span class="main-color" id="selectArea">深圳<a>[切换城市]</a></span>
+                </div>
+            </li>
+            <li class="item"><span class="icon icons-position"></span></li>
+            <li class="item tel-app dropdown">
+                <div class="tel-app-content dropdown-box">
+                    &nbsp;&nbsp;<span class="icons-photo"></span>&nbsp;<span>手机APP</span>&nbsp;<span class="icons-arrow-down"></span>&nbsp;&nbsp;
+                </div>
+                <div class="menu">
+                    <div class="ewm-box">
+                        <p>扫描二维码<br>
+                            下载安卓客户端</p>
+                        <p><img width="98" height="98" alt="" src="http://www.lvmae.com/skin/default/images/ewm_1.jpg"></p>
+                    </div>
+                </div>
+            </li>
+            <li class="item dropdown top-wx">
+                <div class="dropdown-box">
+                    &nbsp;&nbsp;<span class="icons-wx"></span>&nbsp;微信号&nbsp;<span class="icons-arrow-down"></span>&nbsp;&nbsp;
+                </div>
+                <div class="menu">
+                    <div class="ewm-box">
+                        <p>扫描二维码<br>
+                            关注绿蚂蚁公众号</p>
+                        <p><img width="98" height="98" alt="" src="http://www.lvmae.com/skin/default/images/ewm_2.jpg"></p>
+                    </div>
+                </div>
+            </li>
+            <li class="item"><a title="点击这里给我发消息" class="icons-qq" onclick="" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzgwMDA1NjQwNF8zNjU3MzlfODAwMDU2NDA0XzJf" target="_blank">&nbsp;</a></li>
+            <li class="item"><a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzgwMDA1NjQwNF8zNjU3MzlfODAwMDU2NDA0XzJf" target="_blank">客户服务</a></li>
+        </ul>
+    </div>
+</div></div></div>
+
+<!--  源代码顶部结束---------------------------------------------  -->
+
+<!-- 蚂蚁标题  -->
+<center>
+    <div style="width: 100%;height:100px;background-color:white;">  <!-- border: 1px black solid; -->
+        <!-- 标题左 -->
+        <div style="float: left; margin-left:80px;height: 100%;width: 40%">
+            <img src="../img/topleft.png" style="float: left;">
+        </div>
+
+        <!-- 标题右 -->
+        <div style="float: right;margin-right:80px;height: 100%;width: 40%">
+            <img src="../img/topright.png" style="float: right;">
+        </div>
+    </div>
+</center>
+<!-- 标题结束  -->
+
+
+<!-- 导航条开始 -->
+
+<div style="width: 100%;height:80px;">  <!-- border: 1px red solid -->
+    <div style="width:70px;height:80px;float:left;"></div>
+    <ul class="layui-nav layui-bg-green"   >
+        <li class="layui-nav-item"><a id="0" href=""></a></li>
+        <li class="layui-nav-item layui-this"><a id="1" href=""></a></li>
+        <li class="layui-nav-item"><a id="2" href=""></a></li>
+        <li class="layui-nav-item"><a id="3" href=""></a></li>
+        <li class="layui-nav-item"><a id="4" href=""></a></li>
+        <li class="layui-nav-item"><a id="5" href=""></a></li>
+        <li class="layui-nav-item"><a id="6" href=""></a></li>
+        <li class="layui-nav-item"><a id="7" href=""></a></li>
+        <li class="layui-nav-item"><a id="8" href=""></a></li>
+
+    </ul>
+
+</div>
+
+<!-- 导航条结束 -->
+
+
+
+<!-- 分站展示开始 -->
+<div style="width:100%;height:30px;background-color: white">
+    <div style="float:left;width:63px;height:100%;"></div>
+    <div style="float: left;width:40px;hight:80%;margin:6px 20px 10px 20px;background-color: #00bbee" >
+        <font>&nbsp;&nbsp;分&nbsp;站&nbsp;&nbsp;</font>
+    </div>
+    <div style="float:left;margin-top: 5px">
+        <span  id="spanId"></span>
+    </div>
+
+</div>
+<!-- 分站展示结束 -->
+
+<div class="layui-carousel" id="test2" style="margin-top: 15px;">
+
+    <div carousel-item="">
+        <div><a href="javascript:"><span></span></a></div>
+        <div><a><span>深圳到济南专线</span></a></div>
+        <div><a><span>北京到广州专线</span></a></div>
+        <div><a><span>上海到北京专线</span></a></div>
+        <div><a><span>上海到南京专线</span></a></div>
+        <div><a><span>河北到北京专线</span></a></div>
+        <div><a><span>北京到杭州专线</span></a></div>
+        <div><a><span>武昌到南京专线</span></a></div>
+        <div><a><span>上海到武汉专线</span></a></div>
+    </div>
+</div>
+
+<div><table class="layui-hide" id="test" lay-filter="test"></table></div>
+
+<div class="hl-line">
+    <h2>深圳物流专线最近更新</h2>
+    <ul class="line-list">
+        <li><a href="http://www.lvmae.com/road/28373-47008/index.html"> 深圳到台北物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46983/index.html"> 深圳到五家渠物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46971/index.html"> 深圳到图木舒克物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46952/index.html"> 深圳到阿拉尔物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46865/index.html"> 深圳到阿勒泰地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46439/index.html"> 深圳到和田地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46157/index.html"> 深圳到克孜勒苏柯尔克孜自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45838/index.html"> 深圳到博尔塔拉蒙古自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45623/index.html"> 深圳到吐鲁番地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45106/index.html"> 深圳到玉树藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44969/index.html"> 深圳到黄南藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44930/index.html"> 深圳到海北藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44827/index.html"> 深圳到海东地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44633/index.html"> 深圳到甘南藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44494/index.html"> 深圳到临夏回族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-36423/index.html"> 深圳到阿坝藏族羌族自治州物流专线</a></li>
+
+    </ul>
+</div>
+
+<div class="p20">
+    <ul class="line-list">
+        <li><a href="http://www.lvmae.com/road/28373-23842/index.html"> 深圳到武汉物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-14606/index.html"> 深圳到马鞍山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-41665/index.html"> 深圳到西安物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-16224/index.html"> 深圳到莆田物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-15848/index.html"> 深圳到宣城物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-2/index.html"> 深圳到北京物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-37647/index.html"> 深圳到贵阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25445/index.html"> 深圳到长沙物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-39351/index.html"> 深圳到昆明物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-14714/index.html"> 深圳到铜陵物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-28062/index.html"> 深圳到广州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45502/index.html"> 深圳到乌鲁木齐物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-15778/index.html"> 深圳到池州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-17236/index.html"> 深圳到南昌物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-15489/index.html"> 深圳到六安物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-14742/index.html"> 深圳到安庆物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-15055/index.html"> 深圳到滁州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-30417/index.html"> 深圳到梧州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-14939/index.html"> 深圳到黄山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-32756/index.html"> 深圳到成都物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-8785/index.html"> 深圳到哈尔滨物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29093/index.html"> 深圳到惠州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-28442/index.html"> 深圳到珠海物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-13542/index.html"> 深圳到金华物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-28246/index.html"> 深圳到韶关物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-15957/index.html"> 深圳到福州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-14198/index.html"> 深圳到合肥物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-12947/index.html"> 深圳到宁波物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-30252/index.html"> 深圳到桂林物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29694/index.html"> 深圳到中山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-28843/index.html"> 深圳到茂名物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-12734/index.html"> 深圳到杭州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-43222/index.html"> 深圳到兰州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-30491/index.html"> 深圳到北海物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-21150/index.html"> 深圳到郑州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-7690/index.html"> 深圳到长春物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-14671/index.html"> 深圳到淮北物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29658/index.html"> 深圳到东莞物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-3139/index.html"> 深圳到太原物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-28478/index.html"> 深圳到汕头物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-15672/index.html"> 深圳到亳州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-15369/index.html"> 深圳到宿州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-10996/index.html"> 深圳到南京物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-5998/index.html"> 深圳到沈阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-657/index.html"> 深圳到石家庄物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44747/index.html"> 深圳到西宁物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-28555/index.html"> 深圳到佛山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45212/index.html"> 深圳到银川物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-6238/index.html"> 深圳到大连物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-4642/index.html"> 深圳到呼和浩特物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-16165/index.html"> 深圳到厦门物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31700/index.html"> 深圳到重庆物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-16287/index.html"> 深圳到三明物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29969/index.html"> 深圳到南宁物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-11147/index.html"> 深圳到无锡物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-958/index.html"> 深圳到唐山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-28373/index.html"> 深圳到深圳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31418/index.html"> 深圳到三亚物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-11504/index.html"> 深圳到苏州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31682/index.html"> 深圳到琼中黎族苗族自治县物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31667/index.html"> 深圳到保亭黎族苗族自治县物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31562/index.html"> 深圳到屯昌县物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-13116/index.html"> 深圳到温州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31604/index.html"> 深圳到白沙黎族自治县物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-38189/index.html"> 深圳到安顺物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31633/index.html"> 深圳到乐东黎族自治县物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31590/index.html"> 深圳到临高县物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-344/index.html"> 深圳到天津物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31620/index.html"> 深圳到昌江黎族自治县物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-4741/index.html"> 深圳到包头物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-10747/index.html"> 深圳到上海物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-28603/index.html"> 深圳到江门物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-39947/index.html"> 深圳到丽江物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29719/index.html"> 深圳到潮州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-26903/index.html"> 深圳到益阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-26119/index.html"> 深圳到邵阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-19127/index.html"> 深圳到济南物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-37929/index.html"> 深圳到遵义物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-21352/index.html"> 深圳到开封物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-43467/index.html"> 深圳到天水物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40891/index.html"> 深圳到拉萨物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-20410/index.html"> 深圳到临沂物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-30563/index.html"> 深圳到钦州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-35176/index.html"> 深圳到宜宾物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25791/index.html"> 深圳到湘潭物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-1582/index.html"> 深圳到邢台物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29559/index.html"> 深圳到清远物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-19279/index.html"> 深圳到青岛物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31432/index.html"> 深圳到三沙物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-33557/index.html"> 深圳到绵阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-6413/index.html"> 深圳到鞍山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-22960/index.html"> 深圳到商丘物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-36667/index.html"> 深圳到甘孜藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-41901/index.html"> 深圳到宝鸡物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-21488/index.html"> 深圳到洛阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-1321/index.html"> 深圳到邯郸物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25640/index.html"> 深圳到株洲物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-47008/index.html"> 深圳到台北物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-9675/index.html"> 深圳到大庆物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-24047/index.html"> 深圳到黄石物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-42903/index.html"> 深圳到安康物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40857/index.html"> 深圳到迪庆藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31365/index.html"> 深圳到海口物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-8149/index.html"> 深圳到辽源物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29181/index.html"> 深圳到梅州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-24395/index.html"> 深圳到襄阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-28696/index.html"> 深圳到湛江物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-24531/index.html"> 深圳到鄂州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-3259/index.html"> 深圳到大同物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-10027/index.html"> 深圳到佳木斯物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-37826/index.html"> 深圳到六盘水物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-15185/index.html"> 深圳到阜阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44827/index.html"> 深圳到海东地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-42506/index.html"> 深圳到汉中物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-5322/index.html"> 深圳到呼伦贝尔物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-42038/index.html"> 深圳到咸阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-41432/index.html"> 深圳到那曲地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-19852/index.html"> 深圳到潍坊物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-7867/index.html"> 深圳到吉林物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-43928/index.html"> 深圳到酒泉物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-41115/index.html"> 深圳到山南地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-43361/index.html"> 深圳到金昌物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40965/index.html"> 深圳到昌都地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40337/index.html"> 深圳到红河哈尼族彝族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-39501/index.html"> 深圳到曲靖物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-41855/index.html"> 深圳到铜川物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-41557/index.html"> 深圳到阿里地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-38725/index.html"> 深圳到黔西南布依族苗族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40823/index.html"> 深圳到怒江傈僳族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-43349/index.html"> 深圳到嘉峪关物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-39792/index.html"> 深圳到昭通物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45006/index.html"> 深圳到海南藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-41602/index.html"> 深圳到林芝地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45055/index.html"> 深圳到果洛藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-9121/index.html"> 深圳到齐齐哈尔物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-22226/index.html"> 深圳到焦作物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-41210/index.html"> 深圳到日喀则地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45159/index.html"> 深圳到海西蒙古族藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25880/index.html"> 深圳到衡阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46865/index.html"> 深圳到阿勒泰地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-35559/index.html"> 深圳到达州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45600/index.html"> 深圳到克拉玛依物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-33860/index.html"> 深圳到广元物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31273/index.html"> 深圳到崇左物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-47021/index.html"> 深圳到澳门物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-6797/index.html"> 深圳到锦州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-34248/index.html"> 深圳到内江物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46732/index.html"> 深圳到塔城地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46971/index.html"> 深圳到图木舒克物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46983/index.html"> 深圳到五家渠物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45662/index.html"> 深圳到哈密地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-16632/index.html"> 深圳到漳州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45106/index.html"> 深圳到玉树藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-16449/index.html"> 深圳到泉州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46157/index.html"> 深圳到克孜勒苏柯尔克孜自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46439/index.html"> 深圳到和田地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-13862/index.html"> 深圳到台州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46952/index.html"> 深圳到阿拉尔物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31439/index.html"> 深圳到五指山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29780/index.html"> 深圳到揭阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45838/index.html"> 深圳到博尔塔拉蒙古自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45623/index.html"> 深圳到吐鲁番地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44494/index.html"> 深圳到临夏回族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44633/index.html"> 深圳到甘南藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-17861/index.html"> 深圳到赣州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44969/index.html"> 深圳到黄南藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-11810/index.html"> 深圳到连云港物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-14354/index.html"> 深圳到芜湖物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46992/index.html"> 深圳到香港物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-16954/index.html"> 深圳到龙岩物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-1214/index.html"> 深圳到秦皇岛物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-19459/index.html"> 深圳到淄博物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-13416/index.html"> 深圳到绍兴物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-11243/index.html"> 深圳到徐州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-22441/index.html"> 深圳到许昌物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-1800/index.html"> 深圳到保定物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-12266/index.html"> 深圳到扬州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-11427/index.html"> 深圳到常州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-24269/index.html"> 深圳到宜昌物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-3468/index.html"> 深圳到长治物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-36423/index.html"> 深圳到阿坝藏族羌族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44930/index.html"> 深圳到海北藏族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29484/index.html"> 深圳到阳江物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-3886/index.html"> 深圳到运城物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-19684/index.html"> 深圳到烟台物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-10718/index.html"> 深圳到大兴安岭地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-18190/index.html"> 深圳到吉安物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-14440/index.html"> 深圳到蚌埠物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-23164/index.html"> 深圳到信阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-16803/index.html"> 深圳到南平物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-21845/index.html"> 深圳到安阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-6538/index.html"> 深圳到抚顺物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-28975/index.html"> 深圳到肇庆物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-35372/index.html"> 深圳到广安物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-26791/index.html"> 深圳到张家界物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-14532/index.html"> 深圳到淮南物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-38283/index.html"> 深圳到毕节物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25434/index.html"> 深圳到神农架林区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-17096/index.html"> 深圳到宁德物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-39099/index.html"> 深圳到黔南布依族苗族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-37011/index.html"> 深圳到凉山彝族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-17796/index.html"> 深圳到鹰潭物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46558/index.html"> 深圳到伊犁哈萨克自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-12102/index.html"> 深圳到盐城物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-17510/index.html"> 深圳到九江物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-13263/index.html"> 深圳到嘉兴物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31042/index.html"> 深圳到河池物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-18461/index.html"> 深圳到宜春物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-18886/index.html"> 深圳到上饶物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-12602/index.html"> 深圳到宿迁物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-33273/index.html"> 深圳到泸州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-2880/index.html"> 深圳到廊坊物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-34116/index.html"> 深圳到遂宁物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-30123/index.html"> 深圳到柳州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-26552/index.html"> 深圳到常德物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-22696/index.html"> 深圳到南阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-2658/index.html"> 深圳到沧州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-33423/index.html"> 深圳到德阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-13344/index.html"> 深圳到湖州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-17449/index.html"> 深圳到萍乡物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-23610/index.html"> 深圳到驻马店物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-24105/index.html"> 深圳到十堰物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-24785/index.html"> 深圳到荆州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-5223/index.html"> 深圳到鄂尔多斯物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-34607/index.html"> 深圳到南充物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-2427/index.html"> 深圳到承德物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-35038/index.html"> 深圳到眉山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29890/index.html"> 深圳到云浮物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-13703/index.html"> 深圳到衢州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31467/index.html"> 深圳到儋州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29308/index.html"> 深圳到汕尾物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-17383/index.html"> 深圳到景德镇物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-30638/index.html"> 深圳到贵港物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-11937/index.html"> 深圳到淮安物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-4272/index.html"> 深圳到临汾物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-8187/index.html"> 深圳到通化物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-11642/index.html"> 深圳到南通物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-4866/index.html"> 深圳到赤峰物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-22045/index.html"> 深圳到新乡物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-33092/index.html"> 深圳到自贡物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-6925/index.html"> 深圳到营口物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-24650/index.html"> 深圳到孝感物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25349/index.html"> 深圳到仙桃物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-22548/index.html"> 深圳到漯河物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-30718/index.html"> 深圳到玉林物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-6630/index.html"> 深圳到本溪物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31533/index.html"> 深圳到东方物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-10219/index.html"> 深圳到牡丹江物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-3417/index.html"> 深圳到阳泉物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31193/index.html"> 深圳到来宾物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46007/index.html"> 深圳到阿克苏地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-14006/index.html"> 深圳到丽水物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-7246/index.html"> 深圳到铁岭物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-21692/index.html"> 深圳到平顶山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-8025/index.html"> 深圳到四平物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-30526/index.html"> 深圳到防城港物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25404/index.html"> 深圳到天门物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-43605/index.html"> 深圳到武威物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-22346/index.html"> 深圳到濮阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-8370/index.html"> 深圳到松原物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-34375/index.html"> 深圳到乐山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-39627/index.html"> 深圳到玉溪物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46208/index.html"> 深圳到喀什地区物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-36043/index.html"> 深圳到巴中物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-36242/index.html"> 深圳到资阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40016/index.html"> 深圳到普洱物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40223/index.html"> 深圳到楚雄彝族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-38871/index.html"> 深圳到黔东南苗族侗族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-30835/index.html"> 深圳到百色物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40766/index.html"> 深圳到德宏傣族景颇族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-42367/index.html"> 深圳到延安物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-10490/index.html"> 深圳到绥化物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-12479/index.html"> 深圳到泰州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-39712/index.html"> 深圳到保山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-9356/index.html"> 深圳到鸡西物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31651/index.html"> 深圳到陵水黎族自治县物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-42707/index.html"> 深圳到榆林物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-29377/index.html"> 深圳到河源物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-47018/index.html"> 深圳到高雄物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-5841/index.html"> 深圳到锡林郭勒盟物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-5957/index.html"> 深圳到阿拉善盟物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31492/index.html"> 深圳到文昌物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40641/index.html"> 深圳到大理白族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-42209/index.html"> 深圳到渭南物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-8649/index.html"> 深圳到延边朝鲜族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45278/index.html"> 深圳到石嘴山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-30985/index.html"> 深圳到贺州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-33207/index.html"> 深圳到攀枝花物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-10320/index.html"> 深圳到黑河物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-46942/index.html"> 深圳到石河子物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-47010/index.html"> 深圳到新竹物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-13814/index.html"> 深圳到舟山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31449/index.html"> 深圳到琼海物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31547/index.html"> 深圳到定安县物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-43714/index.html"> 深圳到张掖物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-4060/index.html"> 深圳到忻州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40602/index.html"> 深圳到西双版纳傣族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-5527/index.html"> 深圳到巴彦淖尔物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31514/index.html"> 深圳到万宁物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-23823/index.html"> 深圳到济源物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-43382/index.html"> 深圳到白银物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-35881/index.html"> 深圳到雅安物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-47012/index.html"> 深圳到台中物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-27012/index.html"> 深圳到郴州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-43075/index.html"> 深圳到商洛物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45723/index.html"> 深圳到昌吉回族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40484/index.html"> 深圳到文山壮族苗族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-31574/index.html"> 深圳到澄迈县物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45450/index.html"> 深圳到中卫物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-21993/index.html"> 深圳到鹤壁物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44160/index.html"> 深圳到定西物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-7181/index.html"> 深圳到盘锦物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45878/index.html"> 深圳到巴音郭楞蒙古自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-12382/index.html"> 深圳到镇江物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44027/index.html"> 深圳到庆阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-40130/index.html"> 深圳到临沧物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-47014/index.html"> 深圳到嘉义物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-43800/index.html"> 深圳到平凉物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25377/index.html"> 深圳到潜江物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-27230/index.html"> 深圳到永州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-3636/index.html"> 深圳到晋城物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-5745/index.html"> 深圳到兴安盟物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-7550/index.html"> 深圳到葫芦岛物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-19984/index.html"> 深圳到济宁物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-7366/index.html"> 深圳到朝阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-19627/index.html"> 深圳到东营物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-2169/index.html"> 深圳到张家口物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-26357/index.html"> 深圳到岳阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45322/index.html"> 深圳到吴忠物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-3003/index.html"> 深圳到衡水物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-47016/index.html"> 深圳到台南物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-22609/index.html"> 深圳到三门峡物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-27467/index.html"> 深圳到怀化物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-9471/index.html"> 深圳到鹤岗物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-45378/index.html"> 深圳到固原物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-20328/index.html"> 深圳到日照物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-19556/index.html"> 深圳到枣庄物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-9796/index.html"> 深圳到伊春物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-7008/index.html"> 深圳到阜新物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-20871/index.html"> 深圳到滨州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-6695/index.html"> 深圳到丹东物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-10168/index.html"> 深圳到七台河物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-24561/index.html"> 深圳到荆门物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-3643/index.html"> 深圳到朔州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-8294/index.html"> 深圳到白山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-18693/index.html"> 深圳到抚州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-27780/index.html"> 深圳到娄底物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-24922/index.html"> 深圳到黄冈物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-44289/index.html"> 深圳到陇南物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-5072/index.html"> 深圳到通辽物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-17754/index.html"> 深圳到新余物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-20250/index.html"> 深圳到威海物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-7112/index.html"> 深圳到辽阳物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-20156/index.html"> 深圳到泰安物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25100/index.html"> 深圳到咸宁物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25249/index.html"> 深圳到恩施物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-4842/index.html"> 深圳到乌海物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-23392/index.html"> 深圳到周口物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-27882/index.html"> 深圳到湘西土家族苗族自治州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-3729/index.html"> 深圳到晋中物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-8512/index.html"> 深圳到白城物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-20387/index.html"> 深圳到莱芜物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-38545/index.html"> 深圳到铜仁物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-9552/index.html"> 深圳到双鸭山物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-20971/index.html"> 深圳到菏泽物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-4462/index.html"> 深圳到吕梁物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-20726/index.html"> 深圳到聊城物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-20580/index.html"> 深圳到德州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-25195/index.html"> 深圳到随州物流专线</a></li>
+        <li><a href="http://www.lvmae.com/road/28373-5622/index.html"> 深圳到乌兰察布物流专线</a></li>
+        <div style="clear:both;"></div>
+    </ul>
+</div>
+</body>
+<script>
+
+    layui.use(['carousel', 'form'], function(){
+        var carousel = layui.carousel
+            ,form = layui.form;
+
+        //常规轮播
+        carousel.render({
+            elem: '#test1'
+            ,arrow: 'always'
+        });
+
+        //改变下时间间隔、动画类型、高度
+        carousel.render({
+            elem: '#test2'
+            ,interval: 1800
+            ,anim: 'fade'
+            ,height: '80px',
+
+        });
+    })
+</script>
+
+<script >
+    $(function(){
+        fangfa();
+    })
+
+    function fangfa() {
+        layui.use('table', function () {
+            var table = layui.table;
+            table.render({
+                elem: '#test'
+                , url: '../ant/referline'
+                , cols: [
+                    [
+                        {type:'checkbox'},
+                        {field: 'wulliuxianlu',title: '物流线路',sort: true,}
+                    ]
+                ]
+                , limit: 2
+                , limits: [1, 2, 5, 10]
+                , method: 'post'
+                , page: true
+                , request: {
+                    page: 'pageNo', //页码的参数名称，默认：page
+                    limit: 'pageSize' //每页数据量的参数名，默认：limit
+                }
+            });
+        });
+    }
+
+
+    layui.use('table', function() {
+        //监听表格复选框选择
+        var table = layui.table;
+        table.on('checkbox(test)', function (obj) {
+            var gid=obj.data.id;
+           // var xname=obj.data.wulliuxianlu;
+            location.href="../ant/tocom?gid="+gid;
+        });
+    })
+    </script>
+
+
+
+<script>
+
+    $(function() {
+        getTop();
+        //findCity();
+
+    })
+
+
+
+
+    //导航条内容查询
+    function getTop() {
+        $.ajax({
+            url:'../ant/getTop',
+            type:'post',
+            success:function(data){
+
+
+                for(var i=0;i<=data.length;i++){
+                    //one=one+1;
+
+                    $("#"+i+"").html("<a href='"+data[i].url+"'>"+data[i].name+"</a>");
+
+                }
+
+            },
+            error:function(){
+                alert("导航条查询失败");
+            }
+        })
+    }
+
+
+
+    //分站条内容
+    function findCity(){
+        $.ajax({
+            url:'../ant/findCity',
+            type:'post',
+            success:function(data){
+
+                var str="";
+                for (var i=0;i<data.length;i++){
+                    str+="<font size='2'><a href=''>"+data[i].name+"&nbsp;&nbsp;&nbsp;&nbsp;"+"</a></font>";
+                    $("#spanId").html(str);
+                    if(i>13){
+                        $("#spanId").append("<font size='2'><a href=''>更多</a></font>");
+                        break;
+                    }
+                }
+
+            },
+            error:function(){
+                alert("查询分站城市失败");
+            }
+        })
+    }
+
+</script>
+
+
+<!-- 导航条脚本 -->
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+</script>
+<!-- 导航条脚本结束 -->
+
+
+
+
+</html>

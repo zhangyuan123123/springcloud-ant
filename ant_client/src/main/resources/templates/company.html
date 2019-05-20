@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +12,19 @@
 
 
 </head>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="../js/layui/css/layui.css" />
+<link rel="stylesheet" href="../js/layui/css/modules/laydate/default/laydate.css">
+<link rel="stylesheet" href="../js/layui/css/layui.css"  media="all">
+<script type="text/javascript" src="../js/layui/layui.js"></script>
+<script src="../js/layui/layui.all.js" charset="UTF-8"></script>
+
 <style>
     * {
         position: relative;
@@ -405,7 +419,9 @@
 </style>
 
 <body>
+
 <!--导航栏开始-->
+
 <div class="header"><div class="top"><div class="wrap">
     <div class="top-left">
         您好，欢迎使用绿蚂蚁干线物流B2B平台！<a href="http://www.lvmae.com/member/login.php" rel="nofollow">登录</a><a href="http://www.lvmae.com/member/register.php" rel="nofollow">注册</a>
@@ -502,6 +518,7 @@
     </div>
 
 </div>
+
 
 <!--导航栏结束-->
 
@@ -727,9 +744,9 @@
 
     //承运商入驻
     function ruzhu(){
-        //alert("网络延迟，稍后请重试");
+        location.href="tozucePage";
         //在这里面输入任何合法的js语句
-        layer.open({
+        /*layer.open({
             type: 1 //Page层类型
             ,area: ['500px', '300px']
             ,title: '你好，layer'
@@ -737,7 +754,7 @@
             ,maxmin: true //允许全屏最小化
             ,anim: 1 //0-6的动画形式，-1不开启
             ,content: '<div style="padding:50px;">网络延迟，稍后请重试</div>'
-        });
+        });*/
     }
 
 
@@ -745,12 +762,12 @@
 
 <!-- 导航条查询以及分站查询 -->
 <!-- 页面加载导航条内容脚本 -->
+
 <script>
 
     $(function() {
-        //getTop();
+        getTop();
         //findCity();
-
     })
 
 
@@ -766,7 +783,9 @@
 
                 for(var i=0;i<=data.length;i++){
                     //one=one+1;
-                    $("#"+i+"").html(data[i].name);
+
+                    $("#"+i+"").html("<a href='"+data[i].url+"'>"+data[i].name+"</a>");
+
                 }
 
             },
@@ -775,6 +794,7 @@
             }
         })
     }
+
 
 
     //分站条内容
@@ -812,4 +832,5 @@
     });
 </script>
 <!-- 导航条脚本结束 -->
+
 </html>

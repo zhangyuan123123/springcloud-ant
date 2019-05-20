@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../js/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="../js/layui/css/layui.css" />
+<link rel="stylesheet" href="../js/layui/css/modules/laydate/default/laydate.css">
+<link rel="stylesheet" href="../js/layui/css/layui.css"  media="all">
+<script type="text/javascript" src="../js/layui/layui.js"></script>
+<script src="../js/layui/layui.all.js" charset="UTF-8"></script>
+
+<style>
+    * {
+        position: relative;
+    }
+
+    .header, .wrap,    .block-wrapper  .block-wrapper  .section-2 .section-2   .active-list .item,  .fw-list .item    {
+        zoom: 1;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .top {
+        position: relative;
+        z-index: 200;
+        height: 30px;
+        border-bottom: 1px solid #eaeaea;
+        color: #969696;
+    }
+    .header{
+        text-align: center;
+    }
+    .header {
+        background-color: #fff;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    .top-right .top-area, .top-right .tel-app {
+        position: relative;
+    }
+    .top-left, .top-right .item-list .item,   .block-wrapper h3   , .jy-list .item, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list  .partner-list .item , .search-road strong, .search-road label, .search-road select  , .send-reply strong, .send-reply label, .send-reply select , .top-right, .top-right .item-list, dl.dl1 dt a  {
+        display: inline;
+    }
+    .top-left, .top-right .item-list .item,   .block-wrapper h3    , .jy-list .item,   .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .partner-list .item  , .search-road strong, .search-road label, .search-road select  , .send-reply strong, .send-reply label, .send-reply select  {
+        float: left;
+    }
+    .top-right, .top-right .item-list, dl.dl1 dt     {
+        float: right;
+    }
+    .top-left, .top-right {
+        width: 50%;
+        line-height: 30px;
+    }
+    .top-right .item-list .item {
+        position: relative;
+        margin-left: 3px;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    .icons-wx {
+        background-position: -62px -56px;
+        height: 16px;
+        width: 21px;
+    }
+
+    .icons-arrow-down {
+        background-position: -34px -56px;
+        height: 12px;
+        width: 12px;
+    }
+    .icons-photo {
+        background-position: -275px -56px;
+        height: 18px;
+        width: 11px;
+    }
+    .icons-position {
+        background-position: -145px -56px;
+        height: 16px;
+        width: 11px;
+    }
+
+    .icons-wx {
+        width: 21px;
+        height: 16px;
+    }
+    .icons-arrow-down {
+        width: 12px;
+        height: 12px;
+    }
+    .icons-photo {
+        width: 11px;
+        height: 18px;
+    }
+    .icons-position {
+        width: 11px;
+        height: 16px;
+    }
+    .main-color {
+        color: #72b111;
+    }
+    .top-right span, .top-right a{
+        display: inline-block;
+    }
+    a:visited {
+        color: #72b111;
+    }
+    .top a {
+        margin-left: 5px;
+    }
+    .top-right span, .top-right a {
+        vertical-align: middle;
+    }
+    .top-right a {
+        color: #969696;
+    }
+    .icons-qq {
+        background-position: -115px -56px;
+        height: 16px;
+        width: 14px;
+    }
+    .top-right .dropdown-box {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        height: 29px;
+        line-height: 28px;
+        border: 1px solid #fff;
+        border-bottom: none;
+        background-color: #fff;
+        z-index: 11;
+        cursor: pointer;
+    }
+    .top-right .menu {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        width: 63px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        z-index: 10;
+        color: #818181;
+        font-size: 12px;
+    }
+    .top-right .top-wx .menu {
+        width: 127px;
+    }
+    .top-right .ewm-box {
+        padding: 10px 15px 15px 15px;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .top-right .menu img {
+        vertical-align: top;
+    }
+    .top-right .ewm-box img {
+        margin-top: 5px;
+    }
+    .top-right .tel-app .menu {
+        width: 127px;
+    }
+    .top-right .top-area-content span {
+        display: block;
+        height: 29px;
+        line-height: 29px;
+        padding: 0 5px;
+        text-align: center;
+    }
+
+
+    #dul>li {
+        float: none !important;
+        display: block !important;
+
+    }
+    .demo1{
+        float: left;
+    }
+    .demo2{
+        float: right;
+
+    }
+
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    .header, .footer, .frendlink, .flow-box, .block-wrapper {
+        text-align: center;
+    }
+    .footer {
+        margin: 36px 0  40px 0;
+        text-align: center;
+        color: #a1a1a1;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    .clearfix, .header, .wrap, .frendlink, .frendlink .link-content, .banner-box, .flow-box, .block-wrapper, .block-wrapper .block-header, .block-wrapper .block-body, .section-1, .section-2, .section-2 .section-left, .section-2 .area-box, .jy-list, .banchi, .active-list .item, .teijia-list, .com-list, .wuliu-list, .fw-list .item, .partner-list, .areas-box .tab-title, .areas-box .area-content {
+        zoom: 1;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .footer p {
+        margin: 16px 0;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    a:visited {
+        color: #72b111;
+    }
+    .footer a {
+        color: #666;
+    }
+    .sitemap-a a {
+        color: #ddd;
+    }
+    .footer span.line {
+        margin: 0 15px;
+    }
+
+
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    .clearfix, .header, .wrap, .frendlink, .frendlink .link-content, .banner-box, .flow-box, .block-wrapper, .block-wrapper .block-header, .block-wrapper .block-body, .section-1, .section-2, .section-2 .section-left, .section-2 .area-box, .jy-list, .banchi, .active-list .item, .teijia-list, .com-list, .wuliu-list, .fw-list .item, .partner-list, .areas-box .tab-title, .areas-box .area-content {
+        zoom: 1;
+    }
+    .header, .footer, .frendlink, .flow-box, .block-wrapper {
+        text-align: center;
+    }
+    .block-wrapper {
+        margin: 15px auto;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .block-wrapper .block-header {
+        height: 46px;
+        border-bottom: 2px solid #72b111;
+        color: #676767;
+    }
+    .block-wrapper .block-content {
+        border: 1px solid #eaeaea;
+        background-color: #fff;
+    }
+    .dongtai .block-content {
+        height: 300px;
+    }
+    .fl, .top-left, .top-right .item-list .item, .nav ul li, .flow-box ul li, .flow-box .text-box, .block-wrapper h3, .block-wrapper .tab-title, .block-wrapper .tab-title .tab-item, .section-1 .section-left, .section-2 .section-left, .section-2 .section-right, .section-2 .area-1, .section-2 .area-2, .section-4, .section-5, .section-6, .jy-list .item, .banchi .banchi-left, .banchi .banchi-middle, .banchi .banchi-right, .active-list .active-img, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .item-icon, .partner-list .item, .areas-box .tab-item, .search-box .search-content, .search-box .search-aside, .search-road strong, .search-road label, .search-road select, .search-road .btn, .send-reply strong, .send-reply label, .send-reply select, .send-reply .btn, .fr, .top-right, .top-right .item-list, dl.dl1 dt a.more, .section-1 .section-right, .section-2 .area-3 {
+        display: inline;
+    }
+    .fl, .top-left, .top-right .item-list .item, .nav ul li, .flow-box ul li, .flow-box .text-box, .block-wrapper h3, .block-wrapper .tab-title, .block-wrapper .tab-title .tab-item, .section-1 .section-left, .section-2 .section-left, .section-2 .section-right, .section-2 .area-1, .section-2 .area-2, .section-4, .section-5, .section-6, .jy-list .item, .banchi .banchi-left, .banchi .banchi-middle, .banchi .banchi-right, .active-list .active-img, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .item-icon, .partner-list .item, .areas-box .tab-item, .search-box .search-content, .search-box .search-aside, .search-road strong, .search-road label, .search-road select, .search-road .btn, .send-reply strong, .send-reply label, .send-reply select, .send-reply .btn {
+        float: left;
+    }
+    .section-5 {
+        width: 235px;
+    }
+    .dongtai .section-5 {
+        width: 249px;
+        height: auto;
+    }
+    .section-6 {
+        width: 195px;
+    }
+    .dongtai .section-6 {
+        position: relative;
+        width: 440px;
+        height: auto;
+        border-left: 1px dotted #bdbdbd;
+    }
+    .t-1 {
+        height: 50px;
+        line-height: 50px;
+        color: #6b6b6b;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .partner .t-1 {
+        position: absolute;
+        top: -50px;
+        left: 12px;
+        font-size: 16px;
+    }
+    .partner-list .item {
+        position: relative;
+        width: 120px;
+        height: 38px;
+        margin: 28px 10px 0 15px;
+        text-align: center;
+        border-right: 1px dashed #e0e0e0;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    img {
+        display: inline-block;
+        border: 0 none;
+    }
+    a img {
+        border: none;
+    }
+    .dongtai-list {
+        margin: 15px;
+    }
+    .dongtai-list .item {
+        height: 26px;
+        line-height: 26px;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .li_icon {
+        padding: 0px 5px;
+        background-color: #ffb90f;
+        margin-right: 10px;
+        color: #fff;
+    }
+    .dongtai-list a {
+        color: #6b6b6b;
+    }
+    .block-wrapper h3 {
+        float: left;
+        width: 290px;
+        line-height: 46px;
+        text-indent: 20px;
+    }
+
+
+
+</style>
+
+<body>
+<div class="header"><div class="top"><div class="wrap">
+    <div class="top-left">
+        您好，欢迎使用绿蚂蚁干线物流B2B平台！<a href="http://www.lvmae.com/member/login.php" rel="nofollow">登录</a><a href="http://www.lvmae.com/member/register.php" rel="nofollow">注册</a>
+    </div>
+    <div class="top-right">
+        <ul class="item-list">
+            <li class="item">当前城市：</li>
+            <li class="item top-area dropdown">
+                <div class="top-area-content dropdown-box">
+                    <span class="main-color" id="selectArea">深圳<a>[切换城市]</a></span>
+                </div>
+            </li>
+            <li class="item"><span class="icon icons-position"></span></li>
+            <li class="item tel-app dropdown">
+                <div class="tel-app-content dropdown-box">
+                    &nbsp;&nbsp;<span class="icons-photo"></span>&nbsp;<span>手机APP</span>&nbsp;<span class="icons-arrow-down"></span>&nbsp;&nbsp;
+                </div>
+                <div class="menu">
+                    <div class="ewm-box">
+                        <p>扫描二维码<br>
+                            下载安卓客户端</p>
+                        <p><img width="98" height="98" alt="" src="http://www.lvmae.com/skin/default/images/ewm_1.jpg"></p>
+                    </div>
+                </div>
+            </li>
+            <li class="item dropdown top-wx">
+                <div class="dropdown-box">
+                    &nbsp;&nbsp;<span class="icons-wx"></span>&nbsp;微信号&nbsp;<span class="icons-arrow-down"></span>&nbsp;&nbsp;
+                </div>
+                <div class="menu">
+                    <div class="ewm-box">
+                        <p>扫描二维码<br>
+                            关注绿蚂蚁公众号</p>
+                        <p><img width="98" height="98" alt="" src="http://www.lvmae.com/skin/default/images/ewm_2.jpg"></p>
+                    </div>
+                </div>
+            </li>
+            <li class="item"><a title="点击这里给我发消息" class="icons-qq" onclick="" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzgwMDA1NjQwNF8zNjU3MzlfODAwMDU2NDA0XzJf" target="_blank">&nbsp;</a></li>
+            <li class="item"><a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzgwMDA1NjQwNF8zNjU3MzlfODAwMDU2NDA0XzJf" target="_blank">客户服务</a></li>
+        </ul>
+    </div>
+</div></div></div>
+
+<!--  源代码顶部结束---------------------------------------------  -->
+
+<!-- 蚂蚁标题  -->
+<center>
+    <div style="width: 100%;height:100px;background-color:white;">  <!-- border: 1px black solid; -->
+        <!-- 标题左 -->
+        <div style="float: left; margin-left:80px;height: 100%;width: 40%">
+            <img src="../img/topleft.png" style="float: left;">
+        </div>
+
+        <!-- 标题右 -->
+        <div style="float: right;margin-right:80px;height: 100%;width: 40%">
+            <img src="../img/topright.png" style="float: right;">
+        </div>
+    </div>
+</center>
+<!-- 标题结束  -->
+
+
+<!-- 导航条开始 -->
+
+<div style="width: 100%;height:80px;">  <!-- border: 1px red solid -->
+    <div style="width:70px;height:80px;float:left;"></div>
+    <ul class="layui-nav layui-bg-green"   >
+        <li class="layui-nav-item"><a id="0" href=""></a></li>
+        <li class="layui-nav-item layui-this"><a id="1" href=""></a></li>
+        <li class="layui-nav-item"><a id="2" href=""></a></li>
+        <li class="layui-nav-item"><a id="3" href=""></a></li>
+        <li class="layui-nav-item"><a id="4" href=""></a></li>
+        <li class="layui-nav-item"><a id="5" href=""></a></li>
+        <li class="layui-nav-item"><a id="6" href=""></a></li>
+        <li class="layui-nav-item"><a id="7" href=""></a></li>
+        <li class="layui-nav-item"><a id="8" href=""></a></li>
+
+    </ul>
+
+</div>
+
+<!-- 导航条结束 -->
+
+
+
+<!-- 分站展示开始 -->
+<div style="width:100%;height:30px;background-color: white">
+    <div style="float:left;width:63px;height:100%;"></div>
+    <div style="float: left;width:40px;hight:80%;margin:6px 20px 10px 20px;background-color: #00bbee" >
+        <font>&nbsp;&nbsp;分&nbsp;站&nbsp;&nbsp;</font>
+    </div>
+    <div style="float:left;margin-top: 5px">
+        <span  id="spanId"></span>
+    </div>
+
+</div>
+
+<!-- 分站展示结束 -->
+<div>
+<form id="formid">
+    <input type="hidden" name="xid" th:value="${xid}">
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系人</label>
+        <div class="layui-input-inline">
+            <input type="text" name="contact"   lay-verify="required" placeholder="请输入联系人" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">手机号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="phone"   lay-verify="required" placeholder="请输入手机号" autocomplete="off" class="layui-input" >
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">货物名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="nameCommodity"   lay-verify="required" placeholder="请输入货物名称" autocomplete="off" class="layui-input" >
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">货物信息</label>
+        <div class="layui-input-inline">
+            <input type="text" name="cargoInformation"   lay-verify="required" placeholder="请输入货物重量" autocomplete="off" class="layui-input" >
+        </div>
+    </div>
+
+    <button class="layui-btn layui-btn-primary layui-btn-radius" onclick="addinformation()">提交订单</button>
+</form>
+</div>
+
+<div class="value-add">
+    <b>增值服务：</b>
+</div>
+
+<div class="notice">
+    <b>注意事项：</b>
+    <label><input checked="checked" type="checkbox"><img src="http://www.lvmae.com/skin/default/image/icon_bkdz.jpg">不可倒置</label>
+    <label><input checked="checked" type="checkbox"><img src="http://www.lvmae.com/skin/default/image/icon_bkcf.jpg">不能分拆</label>
+    <label><input checked="checked" type="checkbox"><img src="http://www.lvmae.com/skin/default/image/icon_bkdd.jpg">不能堆叠</label>
+    <label><input checked="checked" type="checkbox"><img src="http://www.lvmae.com/skin/default/image/icon_fz.jpg">防撞</label>
+    <label><input checked="checked" type="checkbox"><img src="http://www.lvmae.com/skin/default/image/icon_fys.jpg">防易碎</label>
+    <label><input checked="checked" type="checkbox"><img src="http://www.lvmae.com/skin/default/image/icon_fqx.jpg">防倾斜</label>
+</div>
+
+<h3 class="transaction"><span>位置地图</span></h3>
+
+<!--<div class="company-order">
+    <p class="company-adds"><span class="bold ">地址：</span>深圳市深圳市龙岗区布吉镇丹竹头闽鹏程货运市场11栋</p>
+&lt;!&ndash;    <p class="ac"></p><div class="map" id="map" style="overflow: hidden; position: relative; z-index: 0; background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); text-align: left;"><div style="overflow: visible; position: absolute; z-index: 0; left: -794071px; top: 160642px; cursor: url(&quot;http://api0.map.bdimg.com/images/openhand.cur&quot;) 8 8, default;"><div class="BMap_mask" style="position: absolute; left: 794071px; top: -160642px; z-index: 9; overflow: hidden; user-select: none; width: 890px; height: 430px;">&ndash;&gt;</div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;"><div class="BMap_pop" style="box-sizing: content-box; position: absolute; cursor: default; left: 794153px; top: -160664px;"><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 0px; width: 25px; height: 25px;"><div style="box-sizing:content-box;background:#fff;border-top:1px solid #ababab;border-left:1px solid #ababab;width:30px;height:30px;"></div></div><div class="BMap_top" style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 25px; top: 0px; width: 322px; height: 25px;"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 347px; top: 0px; width: 25px; height: 25px;"><div style="box-sizing:content-box;position:absolute;top:0;left:-6px;background:#fff;border-top:1px solid #ababab;border-right:1px solid #ababab;width:30px;height:30px;"></div></div><div class="BMap_center" style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 25px; width: 370px; height: 37px;"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 62px; width: 25px; height: 25px;"><div style="box-sizing:content-box;position:absolute;top:-6px;left:0;background:#fff;border-bottom:1px solid #ababab;border-left:1px solid #ababab;width:30px;height:30px;"></div></div><div class="BMap_bottom" style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 25px; top: 62px; width: 322px; height: 24px;"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 347px; top: 62px; width: 25px; height: 25px;"><div style="box-sizing:content-box;position:absolute;top:-6px;left:-6px;background:#fff;border-right:1px solid #ababab;border-bottom:1px solid #ababab;width:30px;height:30px;"></div></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 169px; top: 62px; width: 34px; height: 50px;"><img style="box-sizing:content-box;border:none;margin:0px;padding:0px;margin-left:-186px;margin-top:-691px;max-width:none; width:690px;height:786px;" src="http://api0.map.bdimg.com/images/iw3.png"></div><div style="box-sizing: content-box; width: 340px; height: 55px; position: absolute; left: 16px; top: 16px; z-index: 10; overflow: hidden;"><div class="BMap_bubble_title" style="display: none; overflow: hidden; height: auto; line-height: 24px; white-space: nowrap; width: auto;"></div><div class="BMap_bubble_content" style="width: auto; height: auto;"><h4 style="margin:0 0 5px 0;padding:0.2em 0"></h4><p style="margin:0;line-height:1.5;font-size:13px;text-indent:2em">深圳市深圳市龙岗区布吉镇丹竹头闽鹏程货运市场11栋</p></div><div class="BMap_bubble_max_content" style="display:none;position:relative"></div></div><img style="position: absolute; top: 12px; width: 10px; height: 10px; cursor: pointer; z-index: 10000; left: 347px;" src="http://api0.map.bdimg.com/images/iw_close1d3.gif"><img style="position:absolute;top:12px;width:10px;height:10px;-moz-user-select:none;cursor:pointer;z-index:10000;display:none" src="http://api0.map.bdimg.com/images/quanjing.png" title="进入全景"><img style="position:absolute;top:10px;width:9px;height:14px;-moz-user-select:none;cursor:pointer;z-index:10000;display:none;" src="http://api0.map.bdimg.com/images/phone.png" title="发送到手机"><img style="position: absolute; top: 12px; width: 10px; height: 10px; cursor: pointer; z-index: 10000; display: none; left: 327px;" src="http://api0.map.bdimg.com/images/iw_plus1d3.gif"><div style="position: absolute; top: 0px; left: 0px; z-index: 10000; width: 372px;"></div></div></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;"><span class="BMap_Marker BMap_noprint" unselectable="on" "="" style="position: absolute; padding: 0px; margin: 0px; border: 0px; cursor: pointer; background: url(&quot;http://api0.map.bdimg.com/images/blank.gif&quot;); width: 19px; height: 25px; left: 794312px; top: -160553px; z-index: -4526230; user-select: none;" title=""></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;"><div class="BMap_shadow" style="position: absolute; left: 794131px; top: -160620px;" type="infowindow_shadow"><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 36px; top: 0px; width: 70px; height: 30px;"><img onmousedown="return false" style="margin-left: -323px; margin-top: 0px;" src="http://api0.map.bdimg.com/images/iws3.png"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 106px; top: 0px; width: 283px; height: 30px;"><img onmousedown="return false" style="margin-left: -393px; margin-top: 0px;" src="http://api0.map.bdimg.com/images/iws3.png"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 389px; top: 0px; width: 70px; height: 30px;"><img onmousedown="return false" style="margin-left: -1033px; margin-top: 0px;" src="http://api0.map.bdimg.com/images/iws3.png"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 29px; top: 30px; width: 77px; height: 7px;"><img onmousedown="return false" style="margin-top: -30px; margin-left: -316px;" src="http://api0.map.bdimg.com/images/iws3.png"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 106px; top: 30px; width: 305px; height: 7px;"><img onmousedown="return false" style="margin-left: -360px; margin-top: -30px;" src="http://api0.map.bdimg.com/images/iws3.png"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 411px; top: 30px; width: 77px; height: 7px;"><img onmousedown="return false" style="margin-top: -30px; margin-left: -1056px;" src="http://api0.map.bdimg.com/images/iws3.png"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 0px; top: 37px; width: 50px; height: 60px;"><img onmousedown="return false" style="margin-left: -14px; margin-top: -310px;" src="http://api0.map.bdimg.com/images/iws3.png"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 50px; top: 37px; width: 71px; height: 60px;"><img onmousedown="return false" style="margin-left: -255px; margin-top: -310px;" src="http://api0.map.bdimg.com/images/iws3.png"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 121px; top: 37px; width: 140px; height: 60px;"><img onmousedown="return false" style="margin-left: -440px; margin-top: -310px;" src="http://api0.map.bdimg.com/images/iws3.png"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 261px; top: 37px; width: 121px; height: 60px;"><img onmousedown="return false" style="margin-left: -255px; margin-top: -310px;" src="http://api0.map.bdimg.com/images/iws3.png"></div><div style="box-sizing: content-box; overflow: hidden; z-index: 1; position: absolute; left: 382px; top: 37px; width: 70px; height: 60px;"><img onmousedown="return false" style="margin-left: -754px; margin-top: -310px;" src="http://api0.map.bdimg.com/images/iws3.png"></div></div></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;"><label class="BMapLabel" unselectable="on" style="position: absolute; display: none; cursor: inherit; background-color: rgb(190, 190, 190); border: 1px solid rgb(190, 190, 190); padding: 1px; white-space: nowrap; font: 12px arial, sans-serif; z-index: -20000; color: rgb(190, 190, 190);">shadow</label></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;"><span class="BMap_Marker" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 0px; height: 0px; left: 794312px; top: -160553px; z-index: -4526230;"><div style="position: absolute; margin: 0px; padding: 0px; width: 19px; height: 25px; overflow: hidden;"><img src="http://api0.map.bdimg.com/images/marker_red_sprite.png" style="display: block; border:none;margin-left:0px; margin-top:0px; "></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 300;"><span unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 20px; height: 11px; left: 794316px; top: -160539px;"><div style="position: absolute; margin: 0px; padding: 0px; width: 20px; height: 11px; overflow: hidden;"><img src="http://api0.map.bdimg.com/images/marker_red_sprite.png" style="display: block; border:none;margin-left:-19px; margin-top:-13px; "></div></span></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 201;"></div><div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 1;"><div style="position: absolute; overflow: visible; z-index: -100; left: 794516px; top: -160427px; display: block; transform: translate3d(0px, 0px, 0px);"><img src="http://online4.map.bdimg.com/tile/?qt=vtile&amp;x=3102&amp;y=627&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: -385px; top: -188px; max-width: none; opacity: 1;"><img src="http://online0.map.bdimg.com/tile/?qt=vtile&amp;x=3104&amp;y=626&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: 127px; top: 68px; max-width: none; opacity: 1;"><img src="http://online4.map.bdimg.com/tile/?qt=vtile&amp;x=3103&amp;y=626&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: -129px; top: 68px; max-width: none; opacity: 1;"><img src="http://online0.map.bdimg.com/tile/?qt=vtile&amp;x=3103&amp;y=627&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: -129px; top: -188px; max-width: none; opacity: 1;"><img src="http://online0.map.bdimg.com/tile/?qt=vtile&amp;x=3102&amp;y=628&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: -385px; top: -444px; max-width: none; opacity: 1;"><img src="http://online1.map.bdimg.com/tile/?qt=vtile&amp;x=3104&amp;y=627&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: 127px; top: -188px; max-width: none; opacity: 1;"><img src="http://online3.map.bdimg.com/tile/?qt=vtile&amp;x=3101&amp;y=627&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: -641px; top: -188px; max-width: none; opacity: 1;"><img src="http://online3.map.bdimg.com/tile/?qt=vtile&amp;x=3102&amp;y=626&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: -385px; top: 68px; max-width: none; opacity: 1;"><img src="http://online2.map.bdimg.com/tile/?qt=vtile&amp;x=3105&amp;y=627&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: 383px; top: -188px; max-width: none; opacity: 1;"><img src="http://online1.map.bdimg.com/tile/?qt=vtile&amp;x=3103&amp;y=628&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: -129px; top: -444px; max-width: none; opacity: 1;"><img src="http://online2.map.bdimg.com/tile/?qt=vtile&amp;x=3104&amp;y=628&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: 127px; top: -444px; max-width: none; opacity: 1;"><img src="http://online4.map.bdimg.com/tile/?qt=vtile&amp;x=3101&amp;y=628&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: -641px; top: -444px; max-width: none; opacity: 1;"><img src="http://online1.map.bdimg.com/tile/?qt=vtile&amp;x=3105&amp;y=626&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: 383px; top: 68px; max-width: none; opacity: 1;"><img src="http://online3.map.bdimg.com/tile/?qt=vtile&amp;x=3105&amp;y=628&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: 383px; top: -444px; max-width: none; opacity: 1;"><img src="http://online2.map.bdimg.com/tile/?qt=vtile&amp;x=3101&amp;y=626&amp;z=14&amp;styles=pl&amp;scaler=1&amp;udt=20190516" style="position: absolute; border: none; width: 256px; height: 256px; left: -641px; top: 68px; max-width: none; opacity: 1;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 2; display: none; visibility: hidden;"><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 0; display: none;"></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 10; display: none;"></div></div><div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 3;"></div></div><div class="pano_close" title="退出全景" style="z-index: 1201; display: none;"></div><a class="pano_pc_indoor_exit" title="退出室内景" style="z-index: 1201; display: none;"><span style="float:right;margin-right:12px;">出口</span></a><div id="zoomer" style="position:absolute;z-index:0;top:0px;left:0px;overflow:hidden;visibility:hidden;cursor:url(http://api0.map.bdimg.com/images/openhand.cur) 8 8,default"><div class="BMap_zoomer" style="top:0;left:0;"></div><div class="BMap_zoomer" style="top:0;right:0;"></div><div class="BMap_zoomer" style="bottom:0;left:0;"></div><div class="BMap_zoomer" style="bottom:0;right:0;"></div></div><div unselectable="on" class=" BMap_stdMpCtrl BMap_stdMpType0 BMap_noprint anchorTL" style="width: 62px; height: 192px; bottom: auto; right: auto; top: 10px; left: 10px; position: absolute; z-index: 1100; text-size-adjust: none;"><div class="BMap_stdMpPan"><div class="BMap_button BMap_panN" title="向上平移"></div><div class="BMap_button BMap_panW" title="向左平移"></div><div class="BMap_button BMap_panE" title="向右平移"></div><div class="BMap_button BMap_panS" title="向下平移"></div><div class="BMap_stdMpPanBg BMap_smcbg"></div></div><div class="BMap_stdMpZoom" style="height: 147px; width: 62px;"><div class="BMap_button BMap_stdMpZoomIn" title="放大一级"><div class="BMap_smcbg"></div></div><div class="BMap_button BMap_stdMpZoomOut" title="缩小一级" style="top: 126px;"><div class="BMap_smcbg"></div></div><div class="BMap_stdMpSlider" style="height: 108px;"><div class="BMap_stdMpSliderBgTop" style="height: 108px;"><div class="BMap_smcbg"></div></div><div class="BMap_stdMpSliderBgBot" style="top: 31px; height: 81px;"></div><div class="BMap_stdMpSliderMask" title="放置到此级别"></div><div class="BMap_stdMpSliderBar" title="拖动缩放" style="cursor: url(&quot;http://api0.map.bdimg.com/images/openhand.cur&quot;) 8 8, default; top: 31px;"><div class="BMap_smcbg"></div></div></div><div class="BMap_zlHolder"><div class="BMap_zlSt"><div class="BMap_smcbg"></div></div><div class="BMap_zlCity"><div class="BMap_smcbg"></div></div><div class="BMap_zlProv"><div class="BMap_smcbg"></div></div><div class="BMap_zlCountry"><div class="BMap_smcbg"></div></div></div></div><div class="BMap_stdMpGeolocation" style="position: initial; display: none; margin-top: 43px; margin-left: 10px;"><div class="BMap_geolocationContainer" style="position: initial; width: 24px; height: 24px; overflow: hidden; margin: 0px; box-sizing: border-box;"><div class="BMap_geolocationIconBackground" style="width: 24px; height: 24px; background-image: url(http://api0.map.bdimg.com/images/navigation-control/geolocation-control/pc/bg-20x20.png); background-size: 20px 20px; background-position: 3px 3px; background-repeat: no-repeat;"><div class="BMap_geolocationIcon" style="position: initial; width: 24px; height: 24px; cursor: pointer; background-image: url('http://api0.map.bdimg.com/images/navigation-control/geolocation-control/pc/success-10x10.png'); background-size: 10px 10px; background-repeat: no-repeat; background-position: center;"></div></div></div></div></div><div unselectable="on" class=" BMap_noprint anchorTR" style="bottom: auto; right: 10px; top: 10px; left: auto; white-space: nowrap; cursor: pointer; position: absolute; z-index: 10; text-size-adjust: none;"><div style="float: left;"><div title="显示普通地图" style="box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px; border-left: 1px solid rgb(139, 164, 220); border-top: 1px solid rgb(139, 164, 220); border-bottom: 1px solid rgb(139, 164, 220); background: rgb(142, 168, 224); padding: 2px 6px; font: bold 12px/1.3em arial, sans-serif; text-align: center; white-space: nowrap; border-radius: 3px 0px 0px 3px; color: rgb(255, 255, 255);">地图</div></div><div style="float: left;"><div title="显示卫星影像" style="box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px; border-left: 1px solid rgb(139, 164, 220); border-top: 1px solid rgb(139, 164, 220); border-bottom: 1px solid rgb(139, 164, 220); background: rgb(255, 255, 255); padding: 2px 6px; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 12px; line-height: 1.3em; font-family: arial, sans-serif; text-align: center; white-space: nowrap; color: rgb(0, 0, 0);">卫星</div><div style="position: absolute; top: 21px; left: 37px; z-index: -1; display: none;"><div title="显示带有街道的卫星影像" style="border-right:1px solid #8ba4dc;border-bottom:1px solid #8ba4dc;border-left:1px solid #8ba4dc;background:white;font:12px arial,sans-serif;padding:0 8px 0 6px;line-height:1.6em;box-shadow:2px 2px 3px rgba(0, 0, 0, 0.35)"><span checked="checked" "="" class="BMap_checkbox"></span><label style="vertical-align: middle; cursor: pointer;">混合</label></div></div></div><div style="float: left;"><div title="显示三维地图" style="box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 3px; border-width: 1px; border-style: solid; border-color: rgb(139, 164, 220); background: rgb(255, 255, 255); padding: 2px 6px; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 12px; line-height: 1.3em; font-family: arial, sans-serif; text-align: center; white-space: nowrap; border-radius: 0px 3px 3px 0px; color: rgb(0, 0, 0);">三维</div></div></div><div unselectable="on" class=" BMap_omCtrl BMap_ieundefined BMap_noprint anchorBR quad4" style="width: 13px; height: 13px; bottom: 0px; right: 0px; top: auto; left: auto; position: absolute; z-index: 10; text-size-adjust: none;"><div class="BMap_omOutFrame" style="width: 149px; height: 149px;"><div class="BMap_omInnFrame" style="bottom: auto; right: auto; top: 5px; left: 5px; width: 142px; height: 142px;"><div class="BMap_omMapContainer"></div><div class="BMap_omViewMv" style="cursor: url(&quot;http://api0.map.bdimg.com/images/openhand.cur&quot;) 8 8, default;"><div class="BMap_omViewInnFrame"><div></div></div></div></div></div><div class="BMap_omBtn BMap_omBtnClosed" style="bottom: 0px; right: 0px; top: auto; left: auto;"></div></div><div class=" anchorBL" style="height: 32px; position: absolute; z-index: 30; text-size-adjust: none; bottom: 20px; right: auto; top: auto; left: 1px;"><a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: none;"><img style="border:none;width:77px;height:32px" src="http://api0.map.bdimg.com/images/copyright_logo.png"></a></div></div><p></p>
+    <div class="search-road clearfix mt20 c6">
+        <strong class="bold">线路查询：</strong>
+        <label>起点：</label>
+        <div class="placeholder-box fl">
+            <input type="text" class="input gray " id="stratAddress" value="请输入起点" onclick="if(value==defaultValue){value='';}$(this).removeClass('gray');" onblur="if(!value){value=defaultValue;$(this).addClass('gray');}">
+        </div>
+        <label>终点：</label>
+        <div class="placeholder-box fl">
+            <input type="text" class="input" style="width:230px;" value="深圳市深圳市龙岗区布吉镇丹竹头闽鹏程货运市场11栋" id="endAddress" onblur="if(!value){value=defaultValue;}">
+        </div>
+        <a href="javascript:;" class="btn b-5" onclick="tranQuery();">查询公交线路</a> <a href="javascript:;" class="btn b-5" onclick="carQuery();">查询驾车线路</a>
+    </div>
+    <div class="road_detail" id="mapResult"></div>
+</div>-->
+</body>
+<script>
+    function addinformation(){
+        var formdata=$("#formid").serialize();
+        $.ajax({
+            url:"../ant/addinformation",
+            data:formdata,
+            type:"post",
+            success:function(data){
+                alert("提交成功,等待审核，请在个人中心看您的状态");
+                location.href="tomaeBackstage";
+            }
+        })
+    }
+</script>
+
+
+
+<script>
+
+    $(function() {
+        getTop();
+        findCity();
+
+    })
+
+
+
+
+    //导航条内容查询
+    function getTop() {
+        $.ajax({
+            url:'../ant/getTop',
+            type:'post',
+            success:function(data){
+
+
+                for(var i=0;i<=data.length;i++){
+                    //one=one+1;
+                    $("#"+i+"").html(data[i].name);
+                }
+
+            },
+            error:function(){
+                alert("导航条查询失败");
+            }
+        })
+    }
+
+
+    //分站条内容
+    function findCity(){
+        $.ajax({
+            url:'../ant/findCity',
+            type:'post',
+            success:function(data){
+
+                var str="";
+                for (var i=0;i<data.length;i++){
+                    str+="<font size='2'><a href=''>"+data[i].name+"&nbsp;&nbsp;&nbsp;&nbsp;"+"</a></font>";
+                    $("#spanId").html(str);
+                    if(i>13){
+                        $("#spanId").append("<font size='2'><a href=''>更多</a></font>");
+                        break;
+                    }
+                }
+
+            },
+            error:function(){
+                alert("查询分站城市失败");
+            }
+        })
+    }
+
+</script>
+
+
+<!-- 导航条脚本 -->
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+</script>
+<!-- 导航条脚本结束 -->
+
+
+
+
+</html>

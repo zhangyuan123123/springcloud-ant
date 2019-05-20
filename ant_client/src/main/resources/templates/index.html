@@ -6,90 +6,2865 @@
 
 
 
-</head>
-<script src="/jquery-1.8.0.js"></script>
-<link rel="stylesheet" href="/layui/css/layui.css" />
-<link rel="stylesheet" href="/layui/css/modules/laydate/default/laydate.css">
-<script src="/layui/layui.all.js" charset="UTF-8"></script>
-<body>
 
-<button class="layui-btn layui-btn-fluid" onclick="ruzhu()">我是承运商，我要入驻</button>
-<table class="layui-hide" id="test" lay-filter="tblist"></table>
+</head>
+
+
+<link rel="stylesheet" href="../layui/css/layui.css">
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery-1.8.0.js"></script>
+<script src="../layui/layui.js"></script>
+
+
+<style>
+    /* * {
+         position: relative;
+     }*/
+
+    .header, .wrap,    .block-wrapper  .block-wrapper  .section-2 .section-2   .active-list .item,  .fw-list .item    {
+        zoom: 1;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .top {
+        position: relative;
+        z-index: 200;
+        height: 30px;
+        border-bottom: 1px solid #eaeaea;
+        color: #969696;
+    }
+    .header{
+        text-align: center;
+    }
+    .header {
+        background-color: #fff;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    .top-right .top-area, .top-right .tel-app {
+        position: relative;
+    }
+    .top-left, .top-right .item-list .item,   .block-wrapper h3   , .jy-list .item, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list  .partner-list .item , .search-road strong, .search-road label, .search-road select  , .send-reply strong, .send-reply label, .send-reply select , .top-right, .top-right .item-list, dl.dl1 dt a  {
+        display: inline;
+    }
+    .top-left, .top-right .item-list .item,   .block-wrapper h3    , .jy-list .item,   .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .partner-list .item  , .search-road strong, .search-road label, .search-road select  , .send-reply strong, .send-reply label, .send-reply select  {
+        float: left;
+    }
+    .top-right, .top-right .item-list, dl.dl1 dt     {
+        float: right;
+    }
+    .top-left, .top-right {
+        width: 50%;
+        line-height: 30px;
+    }
+    .top-right .item-list .item {
+        position: relative;
+        margin-left: 3px;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    .icons-wx {
+        background-position: -62px -56px;
+        height: 16px;
+        width: 21px;
+    }
+
+    .icons-arrow-down {
+        background-position: -34px -56px;
+        height: 12px;
+        width: 12px;
+    }
+    .icons-photo {
+        background-position: -275px -56px;
+        height: 18px;
+        width: 11px;
+    }
+    .icons-position {
+        background-position: -145px -56px;
+        height: 16px;
+        width: 11px;
+    }
+
+    .icons-wx {
+        width: 21px;
+        height: 16px;
+    }
+    .icons-arrow-down {
+        width: 12px;
+        height: 12px;
+    }
+    .icons-photo {
+        width: 11px;
+        height: 18px;
+    }
+    .icons-position {
+        width: 11px;
+        height: 16px;
+    }
+    .main-color {
+        color: #72b111;
+    }
+    .top-right span, .top-right a{
+        display: inline-block;
+    }
+    a:visited {
+        color: #72b111;
+    }
+    .top a {
+        margin-left: 5px;
+    }
+    .top-right span, .top-right a {
+        vertical-align: middle;
+    }
+    .top-right a {
+        color: #969696;
+    }
+    .icons-qq {
+        background-position: -115px -56px;
+        height: 16px;
+        width: 14px;
+    }
+    .top-right .dropdown-box {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        height: 29px;
+        line-height: 28px;
+        border: 1px solid #fff;
+        border-bottom: none;
+        background-color: #fff;
+        z-index: 11;
+        cursor: pointer;
+    }
+    .top-right .menu {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        width: 63px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        z-index: 10;
+        color: #818181;
+        font-size: 12px;
+    }
+    .top-right .top-wx .menu {
+        width: 127px;
+    }
+    .top-right .ewm-box {
+        padding: 10px 15px 15px 15px;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .top-right .menu img {
+        vertical-align: top;
+    }
+    .top-right .ewm-box img {
+        margin-top: 5px;
+    }
+    .top-right .tel-app .menu {
+        width: 127px;
+    }
+    .top-right .top-area-content span {
+        display: block;
+        height: 29px;
+        line-height: 29px;
+        padding: 0 5px;
+        text-align: center;
+    }
+
+
+    #dul>li {
+        float: none !important;
+        display: block !important;
+
+    }
+    .demo1{
+        float: left;
+    }
+    .demo2{
+        float: right;
+
+    }
+
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    .header, .footer, .frendlink, .flow-box, .block-wrapper {
+        text-align: center;
+    }
+    .footer {
+        margin: 36px 0  40px 0;
+        text-align: center;
+        color: #a1a1a1;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    .clearfix, .header, .wrap, .frendlink, .frendlink .link-content, .banner-box, .flow-box, .block-wrapper, .block-wrapper .block-header, .block-wrapper .block-body, .section-1, .section-2, .section-2 .section-left, .section-2 .area-box, .jy-list, .banchi, .active-list .item, .teijia-list, .com-list, .wuliu-list, .fw-list .item, .partner-list, .areas-box .tab-title, .areas-box .area-content {
+        zoom: 1;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .footer p {
+        margin: 16px 0;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    a:visited {
+        color: #72b111;
+    }
+    .footer a {
+        color: #666;
+    }
+    .sitemap-a a {
+        color: #ddd;
+    }
+    .footer span.line {
+        margin: 0 15px;
+    }
+
+
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-size: 100%;
+        vertical-align: baseline;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    .clearfix, .header, .wrap, .frendlink, .frendlink .link-content, .banner-box, .flow-box, .block-wrapper, .block-wrapper .block-header, .block-wrapper .block-body, .section-1, .section-2, .section-2 .section-left, .section-2 .area-box, .jy-list, .banchi, .active-list .item, .teijia-list, .com-list, .wuliu-list, .fw-list .item, .partner-list, .areas-box .tab-title, .areas-box .area-content {
+        zoom: 1;
+    }
+    .header, .footer, .frendlink, .flow-box, .block-wrapper {
+        text-align: center;
+    }
+    .block-wrapper {
+        margin: 15px auto;
+    }
+    html {
+        line-height: 1;
+    }
+    html, body {
+        line-height: 1.5;
+    }
+    body {
+        font-size: 12px;
+        font-family: Microsoft Yahei,Arial;
+        background-color: #f6f6f6;
+        overflow-x: hidden;
+    }
+    .wrap {
+        width: 1198px;
+        margin: auto;
+        text-align: left;
+    }
+    .wrap {
+        zoom: 1;
+    }
+    .block-wrapper .block-header {
+        height: 46px;
+        border-bottom: 2px solid #72b111;
+        color: #676767;
+    }
+    .block-wrapper .block-content {
+        border: 1px solid #eaeaea;
+        background-color: #fff;
+    }
+    .dongtai .block-content {
+        height: 300px;
+    }
+    .fl, .top-left, .top-right .item-list .item, .nav ul li, .flow-box ul li, .flow-box .text-box, .block-wrapper h3, .block-wrapper .tab-title, .block-wrapper .tab-title .tab-item, .section-1 .section-left, .section-2 .section-left, .section-2 .section-right, .section-2 .area-1, .section-2 .area-2, .section-4, .section-5, .section-6, .jy-list .item, .banchi .banchi-left, .banchi .banchi-middle, .banchi .banchi-right, .active-list .active-img, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .item-icon, .partner-list .item, .areas-box .tab-item, .search-box .search-content, .search-box .search-aside, .search-road strong, .search-road label, .search-road select, .search-road .btn, .send-reply strong, .send-reply label, .send-reply select, .send-reply .btn, .fr, .top-right, .top-right .item-list, dl.dl1 dt a.more, .section-1 .section-right, .section-2 .area-3 {
+        display: inline;
+    }
+    .fl, .top-left, .top-right .item-list .item, .nav ul li, .flow-box ul li, .flow-box .text-box, .block-wrapper h3, .block-wrapper .tab-title, .block-wrapper .tab-title .tab-item, .section-1 .section-left, .section-2 .section-left, .section-2 .section-right, .section-2 .area-1, .section-2 .area-2, .section-4, .section-5, .section-6, .jy-list .item, .banchi .banchi-left, .banchi .banchi-middle, .banchi .banchi-right, .active-list .active-img, .teijia-list .item, .com-list .item, .wuliu-list .item, .fw-list .item-icon, .partner-list .item, .areas-box .tab-item, .search-box .search-content, .search-box .search-aside, .search-road strong, .search-road label, .search-road select, .search-road .btn, .send-reply strong, .send-reply label, .send-reply select, .send-reply .btn {
+        float: left;
+    }
+    .section-5 {
+        width: 235px;
+    }
+    .dongtai .section-5 {
+        width: 249px;
+        height: auto;
+    }
+    .section-6 {
+        width: 195px;
+    }
+    .dongtai .section-6 {
+        position: relative;
+        width: 440px;
+        height: auto;
+        border-left: 1px dotted #bdbdbd;
+    }
+    .t-1 {
+        height: 50px;
+        line-height: 50px;
+        color: #6b6b6b;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .partner .t-1 {
+        position: absolute;
+        top: -50px;
+        left: 12px;
+        font-size: 16px;
+    }
+    .partner-list .item {
+        position: relative;
+        width: 120px;
+        height: 38px;
+        margin: 28px 10px 0 15px;
+        text-align: center;
+        border-right: 1px dashed #e0e0e0;
+    }
+    a {
+        text-decoration: none;
+        color: #72b111;
+    }
+    img {
+        display: inline-block;
+        border: 0 none;
+    }
+    a img {
+        border: none;
+    }
+    .dongtai-list {
+        margin: 15px;
+    }
+    .dongtai-list .item {
+        height: 26px;
+        line-height: 26px;
+        -ms-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .li_icon {
+        padding: 0px 5px;
+        background-color: #ffb90f;
+        margin-right: 10px;
+        color: #fff;
+    }
+    .dongtai-list a {
+        color: #6b6b6b;
+    }
+    .block-wrapper h3 {
+        float: left;
+        width: 290px;
+        line-height: 46px;
+        text-indent: 20px;
+    }
+
+
+</style>
+
+
+<body bgcolor="white">
+
+<div class="header"><div class="top"><div class="wrap">
+    <div class="top-left">
+        您好，欢迎使用绿蚂蚁干线物流B2B平台！<a href="http://www.lvmae.com/member/login.php" rel="nofollow">登录</a><a href="http://www.lvmae.com/member/register.php" rel="nofollow">注册</a>
+    </div>
+    <div class="top-right">
+        <ul class="item-list">
+            <li class="item">当前城市：</li>
+            <li class="item top-area dropdown">
+                <div class="top-area-content dropdown-box">
+                    <span class="main-color" id="selectArea">深圳<a>[切换城市]</a></span>
+                </div>
+            </li>
+            <li class="item"><span class="icon icons-position"></span></li>
+            <li class="item tel-app dropdown">
+                <div class="tel-app-content dropdown-box">
+                    &nbsp;&nbsp;<span class="icons-photo"></span>&nbsp;<span>手机APP</span>&nbsp;<span class="icons-arrow-down"></span>&nbsp;&nbsp;
+                </div>
+                <div class="menu">
+                    <div class="ewm-box">
+                        <p>扫描二维码<br>
+                            下载安卓客户端</p>
+                        <p><img width="98" height="98" alt="" src="http://www.lvmae.com/skin/default/images/ewm_1.jpg"></p>
+                    </div>
+                </div>
+            </li>
+            <li class="item dropdown top-wx">
+                <div class="dropdown-box">
+                    &nbsp;&nbsp;<span class="icons-wx"></span>&nbsp;微信号&nbsp;<span class="icons-arrow-down"></span>&nbsp;&nbsp;
+                </div>
+                <div class="menu">
+                    <div class="ewm-box">
+                        <p>扫描二维码<br>
+                            关注绿蚂蚁公众号</p>
+                        <p><img width="98" height="98" alt="" src="http://www.lvmae.com/skin/default/images/ewm_2.jpg"></p>
+                    </div>
+                </div>
+            </li>
+            <li class="item"><a title="点击这里给我发消息" class="icons-qq" onclick="" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzgwMDA1NjQwNF8zNjU3MzlfODAwMDU2NDA0XzJf" target="_blank">&nbsp;</a></li>
+            <li class="item"><a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzgwMDA1NjQwNF8zNjU3MzlfODAwMDU2NDA0XzJf" target="_blank">客户服务</a></li>
+        </ul>
+    </div>
+</div></div></div>
+
+<!--  源代码顶部结束---------------------------------------------  -->
+
+<!-- 蚂蚁标题  -->
+<center>
+    <div style="width: 100%;height:100px;background-color:white;">  <!-- border: 1px black solid; -->
+        <!-- 标题左 -->
+        <div style="float: left; margin-left:80px;height: 100%;width: 40%">
+            <img src="../img/topleft.png" style="float: left;">
+        </div>
+
+        <!-- 标题右 -->
+        <div style="float: right;margin-right:80px;height: 100%;width: 40%">
+            <img src="../img/topright.png" style="float: right;">
+        </div>
+    </div>
+</center>
+<!-- 标题结束  -->
+
+
+<!-- 导航条开始 -->
+
+<div style="width: 100%;height:80px;">  <!-- border: 1px red solid -->
+    <div style="width:70px;height:80px;float:left;"></div>
+    <ul class="layui-nav layui-bg-green"   >
+        <li class="layui-nav-item"><a id="0" href=""></a></li>
+        <li class="layui-nav-item layui-this"><a id="1" href=""></a></li>
+        <li class="layui-nav-item"><a id="2" href=""></a></li>
+        <li class="layui-nav-item"><a id="3" href=""></a></li>
+        <li class="layui-nav-item"><a id="4" href=""></a></li>
+        <li class="layui-nav-item"><a id="5" href=""></a></li>
+        <li class="layui-nav-item"><a id="6" href=""></a></li>
+        <li class="layui-nav-item"><a id="7" href=""></a></li>
+        <li class="layui-nav-item"><a id="8" href=""></a></li>
+
+    </ul>
+
+</div>
+
+<!-- 导航条结束 -->
+
+
+
+<!-- 分站展示开始 -->
+<div style="width:100%;height:30px;background-color: white">
+    <div style="float:left;width:63px;height:100%;"></div>
+    <div style="float: left;width:40px;hight:80%;margin:6px 20px 10px 20px;background-color: #00bbee" >
+        <font>&nbsp;&nbsp;分&nbsp;站&nbsp;&nbsp;</font>
+    </div>
+    <div style="float:left;margin-top: 5px">
+        <span  id="spanId"></span>
+    </div>
+
+</div>
+<!-- 分站展示结束 -->
+
+
+
+<!-- 图片轮播开始 -->
+<div style="position: relative;">
+    <div class="layui-carousel" id="test1">
+        <div carousel-item>
+            <div>
+                <img src="../img/topleft.png" height="100%" width="100%" />
+            </div>
+            <div>
+                <img src="../img/topright.png" height="100%" width="100%" />
+            </div>
+            <div>
+                <img src="../img/topleft.png" height="100%" width="100%" />
+            </div>
+        </div>
+    </div>
+    <div class="layui-tab layui-tab-card"
+         style="background-color:white;width:500px;height:280px;border: 0.5px gray solid;margin: 60px 100px;position: absolute; top: 0;">
+
+        <ul class="layui-tab-title demo1" id="dul">
+
+            <li class="demo">专线</li>
+            <li class="demo">商圈</li>
+            <li class="demo">承运商</li>
+        </ul>
+
+        <div class="layui-tab-content demo2" style="height: 200px;">
+            <div class="layui-tab-item" style="margin-left: -50px;padding-left: -50px;">
+
+                <form class="layui-form" id="formid">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="margin-top: -10px;height: 20px;">发货地</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="origin"  id="originid" style="padding:-3px;margin-bottom: -10px" lay-verify="required" placeholder="请选择发货地" autocomplete="off" class="layui-input" onclick="gethidden()">
+                            <div class="layui-tab" id="divid" lay-filter="test1"  style="width: 400px;height: 100px;padding:-3px;margin-top: -5px" hidden>
+                                <ul class="layui-tab-title">
+                                    <li lay-id="222"><a href="javascript:getoftencity()">常用</a></li>
+                                    <li lay-id="333"><a href="javascript:getprovinces()">省份</a></li>
+                                    <li lay-id="444"><a href="javascript:void(0)" >城市</a></li>
+                                    <li lay-id="555"><a href="javascript:void(0)">县区</a></li>
+                                </ul>
+                                <div class="layui-tab-content">
+                                    <div class="layui-tab-item"><span id="oftencityid"></span></div>
+                                    <div class="layui-tab-item"><span id="provincesid"></span></div>
+                                    <div class="layui-tab-item"><span id="cityid"></span></div>
+                                    <div class="layui-tab-item"><span id="countyid"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="margin-top: -10px;height: 20px;">收货地</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="provenance" id="provenanceid" style="padding:-3px;margin-bottom: -10px" lay-verify="required" placeholder="请选择收货地" autocomplete="off" class="layui-input" onclick="gethidden2()">
+                            <div class="layui-tab" id="divid2" lay-filter="test2"  style="width: 400px;height: 200px;padding:-3px;margin-top: -5px" hidden>
+                                <ul class="layui-tab-title">
+                                    <li lay-id="22"><a href="javascript:getoftencity2()">常用</a></li>
+                                    <li lay-id="33"><a href="javascript:getprovinces2()">省份</a></li>
+                                    <li lay-id="44"><a href="javascript:void(0)" >城市</a></li>
+                                    <li lay-id="55"><a href="javascript:void(0)">县区</a></li>
+                                </ul>
+                                <div class="layui-tab-content">
+                                    <div class="layui-tab-item"><span id="oftencityid2"></span></div>
+                                    <div class="layui-tab-item"><span id="provincesid2"></span></div>
+                                    <div class="layui-tab-item"><span id="cityid2"></span></div>
+                                    <div class="layui-tab-item"><span id="countyid2"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reset-show"><font color="red">2630633</font>条物流线路、<font color="red">10888</font>家物流承运商供您选择！</div>
+                    <button class="layui-btn layui-btn-primary layui-btn-radius" onclick="tocarriers()">即刻查询</button>
+
+                </form>
+
+
+            </div>
+            <div class="layui-tab-item">2222</div>
+            <div class="layui-tab-item">
+                <input type="text" id="cname"  required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" name="name">
+                <button class="layui-btn" onclick="findCompany()">即刻查询</button>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+<!-- 图片轮播中的查询结束 -->
+<!-- 图片轮播结束 -->
+
+
+<!-- 中间位置广告图开始 -->
+<center>
+    <div style="width:90%;height:78px;margin-top: 60px">
+        <img src="../img/three.png" height="78" width="1202"/></div>
+</center>
+<!-- 中间位置广告图结束 -->
+
+
+
+<!-- 发车时刻表开始 -->
+<center>
+    <div style="background-color:white;height: 500px;width: 90%;margin-top: 50px;">
+
+        <div class="layui-tab">
+            <ul class="layui-tab-title" style="float:right">
+                <li class="layui-this">华南区</li>
+                <li>华东区</li>
+                <li>华中区</li>
+                <li>西南区</li>
+                <li>东北区</li>
+            </ul>
+            <div class="layui-tab-content">
+                <!-- 华南区 -->
+                <div class="layui-tab-item layui-show" >
+                    <div style="width:18%;height:420px;margin-top:30px;float:left">
+                        <br/>
+                        <center><h4>热门送达城市</h4></center><br/>
+                        <center>
+                            <a href="">北京市</a>&nbsp;&nbsp;<a href="">天津市</a>&nbsp;&nbsp;<a href="">石家庄市</a><br/>
+                            <br/>
+                            <a href="">唐山市</a>&nbsp;&nbsp;<a href="">邯郸市</a>&nbsp;&nbsp;<a href="">邢台市</a>&nbsp;&nbsp;<br/>
+                            <br/>
+                            <a href="">太原市</a>&nbsp;&nbsp;<a href="">大同市</a>&nbsp;&nbsp;<a href="">阳泉市</a>&nbsp;&nbsp;<br/>
+                            <br/>
+                            <a href="">长治市</a>&nbsp;&nbsp;<a href="">临汾市</a>&nbsp;&nbsp;<a href="">呼和浩特</a><br/>
+                            <br/>
+                            <a href="">包头市</a>&nbsp;&nbsp;<a href="">赤峰市</a>&nbsp;&nbsp;<a href="">鄂尔多斯</a><br/>
+                            <br/>
+                            <a href="">秦皇岛市</a>&nbsp;&nbsp;<a href="">保定市</a>&nbsp;&nbsp;<a href="">张家口市</a><br/>
+                            <br/>
+                            <a href="">承德市</a>&nbsp;&nbsp;<a href="">沧州市</a>&nbsp;&nbsp;<a href="">廊坊市</a>&nbsp;&nbsp;<br/>
+                            <br/>
+                            <a href="">衡水市</a>&nbsp;&nbsp;<a href="">晋城市</a>&nbsp;&nbsp;<a href="">朔州市</a>&nbsp;&nbsp;<br/>
+                        </center>
+                    </div>
+                    <div style="width:80%;height:420px;float:right">
+                        <div style="width:100%;height:40px">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>物流线路</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>运输班次/预计到达时间</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>运输价格</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>保障</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>发货</font>
+                        </div>
+
+                        <div  style="width:100%;height:360px">
+                            <div id="box" style="height: 350px; overflow: hidden;">
+
+                                <ul id="ul1">
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        北京--上海&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">北京</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">上海</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">北京xx物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        天津--深圳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">天津</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">深圳</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">天津出名物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        邯郸--南昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">邯郸</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">南昌</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        邯郸--北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">邯郸</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">北京</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        承德--重庆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">承德</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">重庆</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        成都--杭州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">成都</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">杭州</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        厦门--西安&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">厦门</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">西安</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        昆明--泸州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">昆明</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">泸州</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        包头--银川&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">包头</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">银川</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </ul>
+                                <ul id="ul2"></ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- 华东区 -->
+                <div class="layui-tab-item">
+                    <div style="width:18%;height:420px;margin-top:30px;float:left">
+                        <br/>
+                        <center><h4>热门送达城市</h4></center><br/>
+                        <center>
+                            <a href="">上海市</a>&nbsp;&nbsp;<a href="">南京市</a>&nbsp;&nbsp;<a href="">无锡市</a><br/>
+                            <br/>
+                            <a href="">苏州市</a>&nbsp;&nbsp;<a href="">杭州市</a>&nbsp;&nbsp;<a href="">宁波市</a><br/>
+                            <br/>
+                            <a href="">金华市</a>&nbsp;&nbsp;<a href="">合肥市</a>&nbsp;&nbsp;<a href="">阜阳市</a><br/>
+                            <br/>
+                            <a href="">福州市</a>&nbsp;&nbsp;<a href="">厦门市</a>&nbsp;&nbsp;<a href="">南昌市</a><br/>
+                            <br/>
+                            <a href="">济南市</a>&nbsp;&nbsp;<a href="">青岛市</a>&nbsp;&nbsp;<a href="">潍坊市</a><br/>
+                            <br/>
+                            <a href="">临沂市</a>&nbsp;&nbsp;<a href="">徐州市</a>&nbsp;&nbsp;<a href="">常州市</a><br/>
+                            <br/>
+                            <a href="">南通市</a>&nbsp;&nbsp;<a href="">连云港</a>&nbsp;&nbsp;<a href="">淮安市</a><br/>
+                            <br/>
+                            <a href="">盐城市</a>&nbsp;&nbsp;<a href="">扬州市</a>&nbsp;&nbsp;<a href="">镇江市</a><br/>
+                        </center>
+                    </div>
+                    <div style="width:80%;height:420px;float:right">
+                        <div style="width:100%;height:40px">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>物流线路</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>运输班次/预计到达时间</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>运输价格</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>保障</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>发货</font>
+                        </div>
+
+                        <div  style="width:100%;height:360px">
+                            <div id="box2" style="height: 350px;  overflow: hidden;">
+
+                                <ul id="ul3">
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        北京--上海&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">北京</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">上海</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">北京xx物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        天津--深圳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">天津</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">深圳</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">天津出名物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        邯郸--南昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">邯郸</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">南昌</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        邯郸--北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">邯郸</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">北京</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        承德--重庆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">承德</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">重庆</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        成都--杭州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">成都</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">杭州</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        厦门--西安&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">厦门</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">西安</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        昆明--泸州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">昆明</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">泸州</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        包头--银川&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">包头</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">银川</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </ul>
+                                <ul id="ul4"></ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- 华中区 -->
+                <div class="layui-tab-item">
+                    <div style="width:18%;margin-top:30px;height:420px;float:left">
+                        <br/>
+                        <center><h4>热门送达城市</h4></center><br/>
+                        <center>
+                            <a href="">郑州市</a>&nbsp;&nbsp;<a href="">开封市</a>&nbsp;&nbsp;<a href="">洛阳市</a><br/>
+                            <br/>
+                            <a href="">焦作市</a>&nbsp;&nbsp;<a href="">商丘市</a>&nbsp;&nbsp;<a href="">武汉市</a><br/>
+                            <br/>
+                            <a href="">黄石市</a>&nbsp;&nbsp;<a href="">十堰市</a>&nbsp;&nbsp;<a href="">襄阳市</a><br/>
+                            <br/>
+                            <a href="">鄂州市</a>&nbsp;&nbsp;<a href="">长沙市</a>&nbsp;&nbsp;<a href="">株洲市</a><br/>
+                            <br/>
+                            <a href="">湘潭市</a>&nbsp;&nbsp;<a href="">衡阳市</a>&nbsp;&nbsp;<a href="">邵阳市</a><br/>
+                            <br/>
+                            <a href="">平顶山</a>&nbsp;&nbsp;<a href="">安阳市</a>&nbsp;&nbsp;<a href="">鹤壁市</a><br/>
+                            <br/>
+                            <a href="">新乡市</a>&nbsp;&nbsp;<a href="">濮阳市</a>&nbsp;&nbsp;<a href="">许昌市</a><br/>
+                            <br/>
+                            <a href="">漯河市</a>&nbsp;&nbsp;<a href="">三门峡</a>&nbsp;&nbsp;<a href="">南阳市</a><br/>
+                        </center>
+                    </div>
+                    <div style="width:80%;height:420px;float:right">
+                        <div style="width:100%;height:40px">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>物流线路</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>运输班次/预计到达时间</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>运输价格</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>保障</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>发货</font>
+                        </div>
+
+                        <div  style="width:100%;height:360px">
+                            <div id="box3" style="height: 350px; overflow: hidden;">
+
+                                <ul id="ul5">
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        北京--上海&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">北京</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">上海</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">北京xx物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        天津--深圳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">天津</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">深圳</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">天津出名物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        邯郸--南昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">邯郸</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">南昌</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        邯郸--北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">邯郸</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">北京</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        承德--重庆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">承德</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">重庆</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        成都--杭州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">成都</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">杭州</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        厦门--西安&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">厦门</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">西安</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        昆明--泸州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">昆明</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">泸州</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        包头--银川&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">包头</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">银川</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </ul>
+                                <ul id="ul6"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 西南区 -->
+                <div class="layui-tab-item">
+                    <div style="width:18%;height:420px;margin-top:30px;float:left">
+                        <br/>
+                        <center><h4>热门送达城市</h4></center><br/>
+                        <center>
+                            <a href="">重庆市</a>&nbsp;&nbsp;<a href="">成都市</a>&nbsp;&nbsp;<a href="">绵阳市</a><br/>
+                            <br/>
+                            <a href="">广元市</a>&nbsp;&nbsp;<a href="">宜宾市</a>&nbsp;&nbsp;<a href="">达州市</a><br/>
+                            <br/>
+                            <a href="">贵阳市</a>&nbsp;&nbsp;<a href="">六盘水</a>&nbsp;&nbsp;<a href="">遵义市</a><br/>
+                            <br/>
+                            <a href="">安顺市</a>&nbsp;&nbsp;<a href="">昆明市</a>&nbsp;&nbsp;<a href="">曲靖市</a><br/>
+                            <br/>
+                            <a href="">昭通市</a>&nbsp;&nbsp;<a href="">丽江市</a>&nbsp;&nbsp;<a href="">拉萨市</a><br/>
+                            <br/>
+                            <a href="">自贡市</a>&nbsp;&nbsp;<a href="">攀枝花</a>&nbsp;&nbsp;<a href="">泸州市</a><br/>
+                            <br/>
+                            <a href="">德阳市</a>&nbsp;&nbsp;<a href="">遂宁市</a>&nbsp;&nbsp;<a href="">内江市</a><br/>
+                            <br/>
+                            <a href="">乐山市</a>&nbsp;&nbsp;<a href="">南充市</a>&nbsp;&nbsp;<a href="">眉山市</a><br/>
+                        </center>
+                    </div>
+                    <div style="width:80%;height:420px;float:right">
+                        <div style="width:100%;height:40px">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>物流线路</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>运输班次/预计到达时间</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>运输价格</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>保障</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>发货</font>
+                        </div>
+
+
+                        <div  style="width:100%;height:360px">
+                            <div id="box5" style="height: 350px;overflow: hidden;">
+
+                                <ul id="ulw">
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        北京--上海&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">北京</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">上海</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">北京xx物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        天津--深圳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">天津</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">深圳</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">天津出名物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        邯郸--南昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">邯郸</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">南昌</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        邯郸--北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">邯郸</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">北京</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        承德--重庆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">承德</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">重庆</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        成都--杭州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">成都</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">杭州</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        厦门--西安&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">厦门</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">西安</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        昆明--泸州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">昆明</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">泸州</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        包头--银川&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">包头</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">银川</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </ul>
+                                <ul id="ulq"></ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <!-- 东北区 -->
+                <div class="layui-tab-item">
+                    <div style="width:18%;height:420px;margin-top:30px;float:left">
+                        <br/>
+                        <center><h4>热门送达城市</h4></center><br/>
+                        <center>
+                            <a href="">沈阳市</a>&nbsp;&nbsp;<a href="">大连市</a>&nbsp;&nbsp;<a href="">鞍山市</a><br/>
+                            <br/>
+                            <a href="">抚顺市</a>&nbsp;&nbsp;<a href="">本溪市</a>&nbsp;&nbsp;<a href="">长春市</a><br/>
+                            <br/>
+                            <a href="">吉林市</a>&nbsp;&nbsp;<a href="">辽源市</a>&nbsp;&nbsp;<a href="">通化市</a><br/>
+                            <br/>
+                            <a href="">松原市</a>&nbsp;&nbsp;<a href="">哈尔滨</a>&nbsp;&nbsp;<a href="">齐齐哈尔</a><br/>
+                            <br/>
+                            <a href="">大庆市</a>&nbsp;&nbsp;<a href="">佳木斯</a>&nbsp;&nbsp;<a href="">丹东市</a><br/>
+                            <br/>
+                            <a href="">锦州市</a>&nbsp;&nbsp;<a href="">营口市</a>&nbsp;&nbsp;<a href="">阜新市</a><br/>
+                            <br/>
+                            <a href="">辽阳市</a>&nbsp;&nbsp;<a href="">盘锦市</a>&nbsp;&nbsp;<a href="">铁岭市</a><br/>
+                            <br/>
+                            <a href="">朝阳市</a>&nbsp;&nbsp;<a href="">葫芦岛</a>&nbsp;&nbsp;<a href="">四平市</a><br/>
+                        </center>
+                    </div>
+                    <div style="width:80%;height:420px;float:right">
+                        <div style="width:100%;height:40px">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>物流线路</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>运输班次/预计到达时间</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>运输价格</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>保障</font>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <font>发货</font>
+                        </div>
+
+
+                        <div  style="width:100%;height:360px">
+                            <div id="box4" style="height: 350px; overflow: hidden;">
+
+                                <ul id="ul7">
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        北京--上海&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">北京</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">上海</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">北京xx物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        天津--深圳&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">天津</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">深圳</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">天津出名物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        邯郸--南昌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">邯郸</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">南昌</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        邯郸--北京&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">邯郸</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">北京</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        承德--重庆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">承德</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">重庆</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        成都--杭州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">成都</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">杭州</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        厦门--西安&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">厦门</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">西安</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        昆明--泸州&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">昆明</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">泸州</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <li>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        包头--银川&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <font size="4" color="green">包头</font><i class="layui-icon layui-icon-next"></i>
+                                        <font size="4" color="green">银川</font>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        面议
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="">诚哥物流有限公司</a>
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" value="联系发货" class="layui-btn layui-btn-radius" >
+                                    </li>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </ul>
+                                <ul id="ul8"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <!-- 选项卡结束 -->
+    </div>
+    <!-- 大div结束标识 -->
+</center>
+<!-- 发车时刻表结束 -->
+
+
+
+<!-- 特价路线 -->
+<div style="width:100%;height:40px;margin-left: 90px">
+    <font size="2" color="#a9a9a9">
+        特价线路
+    </font>
+    <select name="city" class="lay-ignore" lay-verify="required" style="width: 90px;height:20px">
+        <option value=""></option>
+        <option value="0">北京</option>
+        <option value="1">上海</option>
+        <option value="2">广州</option>
+        <option value="3">深圳</option>
+        <option value="4">杭州</option>
+    </select>
+</div>
+<!-- 特价路线结束 -->
+
+
+
+
+
+
+
+
+<!-- 图片广告位置 -->
+<center>
+    <div style="width:84%;height:400px;background-color: white;border: 0.5px lightgray solid">
+        <div style="width: 100%;height: 3px;background-color: greenyellow;"></div>
+        <!-- 1 -->
+        <div style="width:15%;height: 150px;margin-top:35px;margin-left:42px;border: 0.5px lightgray solid;float: left">
+            <div style="width:99.8%;height:30px;background-color:lightgray;">
+                <font size="2">创兴旺物流</font>&nbsp;&nbsp;&nbsp;
+                <font size="1" color="gray">发往</font>
+                <button class="layui-btn layui-btn-xs layui-btn-disabled">8.3折</button>
+
+            </div>
+            <div style="width:99.8%;margin-top:3px;height:110px;background-color:white;">
+                <center>
+                    <font size="6">长沙市</font><br/>
+                    <font>￥<font color="red">0.25元/公斤</font>&nbsp;￥0.3元</font><br/>
+                    <button class="layui-btn">联系发货</button>
+                </center>
+            </div>
+        </div>
+
+
+        <!-- 2 -->
+        <div style="width:15%;height: 150px;margin-top:35px;margin-left:42px;border: 0.5px lightgray solid;float: left">
+            <div style="width:99.8%;height:30px;background-color:lightgray;">
+                <font size="2">创腾物流</font>&nbsp;&nbsp;&nbsp;
+                <font size="1" color="gray">发往</font>
+                <button class="layui-btn layui-btn-xs layui-btn-disabled">7.8折</button>
+
+            </div>
+            <div style="width:99.8%;margin-top:3px;height:110px;background-color:white;">
+                <center>
+                    <font size="6">杭州市</font><br/>
+                    <font>￥<font color="red">0.35元/公斤</font>&nbsp;￥0.45元</font><br/>
+                    <button class="layui-btn">联系发货</button>
+                </center>
+            </div>
+        </div>
+
+
+        <!-- 3 -->
+        <div style="width:15%;height: 150px;margin-top:35px;margin-left:42px;border: 0.5px lightgray solid;float: left">
+            <div style="width:99.8%;height:30px;background-color:lightgray;">
+                <font size="2">深远通物流</font>&nbsp;&nbsp;&nbsp;
+                <font size="1" color="gray">发往</font>
+                <button class="layui-btn layui-btn-xs layui-btn-disabled">9.3折</button>
+
+            </div>
+            <div style="width:99.8%;margin-top:3px;height:110px;background-color:white;">
+                <center>
+                    <font size="6">包头市</font><br/>
+                    <font>￥<font color="red">0.65元/公斤</font>&nbsp;￥0.7元</font><br/>
+                    <button class="layui-btn">联系发货</button>
+                </center>
+            </div>
+        </div>
+
+
+        <!-- 4 -->
+        <div style="width:15%;height: 150px;margin-top:35px;margin-left:42px;border: 0.5px lightgray solid;float: left">
+            <div style="width:99.8%;height:30px;background-color:lightgray;">
+                <font size="2">粤发物流</font>&nbsp;&nbsp;&nbsp;
+                <font size="1" color="gray">发往</font>
+                <button class="layui-btn layui-btn-xs layui-btn-disabled">8.0折</button>
+
+            </div>
+            <div style="width:99.8%;margin-top:3px;height:110px;background-color:white;">
+                <center>
+                    <font size="6">金华市</font><br/>
+                    <font>￥<font color="red">0.40元/公斤</font>&nbsp;￥0.50元</font><br/>
+                    <button class="layui-btn">联系发货</button>
+                </center>
+            </div>
+        </div>
+
+
+        <!-- 5 -->
+        <div style="width:15%;height: 150px;margin-top:35px;margin-left:42px;border: 0.5px lightgray solid;float: left">
+            <div style="width:99.8%;height:30px;background-color:lightgray;">
+                <font size="2">骏捷物流</font>&nbsp;&nbsp;&nbsp;
+                <font size="1" color="gray">发往</font>
+                <button class="layui-btn layui-btn-xs layui-btn-disabled">8.3折</button>
+
+            </div>
+            <div style="width:99.8%;margin-top:3px;height:110px;background-color:white;">
+                <center>
+                    <font size="6">北京市</font><br/>
+                    <font>￥<font color="red">0.50元/公斤</font>&nbsp;￥0.60元</font><br/>
+                    <button class="layui-btn">联系发货</button>
+                </center>
+            </div>
+        </div>
+
+
+        <!-- 6 -->
+        <div style="width:15%;height: 150px;margin-top:35px;margin-left:42px;border: 0.5px lightgray solid;float: left">
+            <div style="width:99.8%;height:30px;background-color:lightgray;">
+                <font size="2">安泰物流</font>&nbsp;&nbsp;&nbsp;
+                <font size="1" color="gray">发往</font>
+                <button class="layui-btn layui-btn-xs layui-btn-disabled">8.3折</button>
+
+            </div>
+            <div style="width:99.8%;margin-top:3px;height:110px;background-color:white;">
+                <center>
+                    <font size="6">重庆市</font><br/>
+                    <font>￥<font color="red">0.50元/公斤</font>&nbsp;￥0.60元</font><br/>
+                    <button class="layui-btn">联系发货</button>
+                </center>
+            </div>
+        </div>
+
+
+        <!-- 7 -->
+        <div style="width:15%;height: 150px;margin-top:35px;margin-left:42px;border: 0.5px lightgray solid;float: left">
+            <div style="width:99.8%;height:30px;background-color:lightgray;">
+                <font size="2">金鹰物流</font>&nbsp;&nbsp;&nbsp;
+                <font size="1" color="gray">发往</font>
+                <button class="layui-btn layui-btn-xs layui-btn-disabled">9.0折</button>
+
+            </div>
+            <div style="width:99.8%;margin-top:3px;height:110px;background-color:white;">
+                <center>
+                    <font size="6">温州市</font><br/>
+                    <font>￥<font color="red">0.45元/公斤</font>&nbsp;￥0.5元</font><br/>
+                    <button class="layui-btn">联系发货</button>
+                </center>
+            </div>
+        </div>
+
+
+        <!-- 8 -->
+        <div style="width:15%;height: 150px;margin-top:35px;margin-left:42px;border: 0.5px lightgray solid;float: left">
+            <div style="width:99.8%;height:30px;background-color:lightgray;">
+                <font size="2">凯峰物流</font>&nbsp;&nbsp;&nbsp;
+                <font size="1" color="gray">发往</font>
+                <button class="layui-btn layui-btn-xs layui-btn-disabled">8.6折</button>
+
+            </div>
+            <div style="width:99.8%;margin-top:3px;height:110px;background-color:white;">
+                <center>
+                    <font size="6">扬州市</font><br/>
+                    <font>￥<font color="red">0.60元/公斤</font>&nbsp;￥0.70元</font><br/>
+                    <button class="layui-btn">联系发货</button>
+                </center>
+            </div>
+        </div>
+
+
+        <!-- 9 -->
+        <div style="width:15%;height: 150px;margin-top:35px;margin-left:42px;border: 0.5px lightgray solid;float: left">
+            <div style="width:99.8%;height:30px;background-color:lightgray;">
+                <font size="2">惠昌物流</font>&nbsp;&nbsp;&nbsp;
+                <font size="1" color="gray">发往</font>
+                <button class="layui-btn layui-btn-xs layui-btn-disabled">8.3折</button>
+
+            </div>
+            <div style="width:99.8%;margin-top:3px;height:110px;background-color:white;">
+                <center>
+                    <font size="6">上海市</font><br/>
+                    <font>￥<font color="red">0.29元/公斤</font>&nbsp;￥0.35元</font><br/>
+                    <button class="layui-btn">联系发货</button>
+                </center>
+            </div>
+        </div>
+    </div>
+</center>
+
+
+
+<!-- 推荐物流承运商 -->
+<div style="width:100%;height:40px;margin-top:40px;margin-left: 90px">
+    <font size="2" color="#a9a9a9">
+        推荐物流承运商
+    </font>
+    <select name="city"  lay-verify="required" style="width: 90px;height:20px">
+        <option value=""></option>
+        <option value="0">北京</option>
+        <option value="1">上海</option>
+        <option value="2">广州</option>
+        <option value="3">深圳</option>
+        <option value="4">杭州</option>
+    </select>
+</div>
+<!-- 推荐物流承运商结束 -->
+
+
+<!-- 提交订单提示开始 -->
+<div style="width:84%;height:400px;margin-left:107px;background-color: white;border: 0.5px lightgray solid">
+    <div style="width: 100%;height: 3px;background-color: greenyellow;"></div>
+    <br/>
+    <font size="3" >最新发货单</font>
+    <div  style="width:100%;height:360px;margin-left: 5px;margin-top: 3px;">
+        <div id="four" style="height: 350px; overflow: hidden;">
+            <ul id="f1">
+                <li><font color="orange">1851801****</font>提交订单成功, <font color="green">邯郸到北京</font></li><br/>
+                <li><font color="orange">1765623****</font>提交订单成功, <font color="green">郑州到上海</font></li><br/>
+                <li><font color="orange">1324581****</font>提交订单成功, <font color="green">重庆到上海</font></li><br/>
+                <li><font color="orange">1353764****</font>提交订单成功, <font color="green">泸州到包头</font></li><br/>
+                <li><font color="orange">1803452****</font>提交订单成功, <font color="green">重庆到辽宁</font></li><br/>
+                <li><font color="orange">1314568****</font>提交订单成功, <font color="green">深圳到包头</font></li><br/>
+                <li><font color="orange">1985212****</font>提交订单成功, <font color="green">深圳到昆明</font></li><br/>
+                <li><font color="orange">1513648****</font>提交订单成功, <font color="green">深圳到泸州</font></li><br/>
+                <li><font color="orange">1598311****</font>提交订单成功, <font color="green">郑州到昆明</font></li><br/>
+                <li><font color="orange">1506745****</font>提交订单成功, <font color="green">成都到上海</font></li><br/>
+                <li><font color="orange">1334579****</font>提交订单成功, <font color="green">郑州到上海</font></li><br/>
+            </ul>
+            <ul id="f2"></ul>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<!-- 物流商圈 -->
+<div style="margin-top: 50px;margin-left: 107px">
+    <font size="3" color="#d3d3d3">物流商圈</font>
+</div>
+<div style="width:84%;height:220px;margin-left:107px;background-color: white;border: 0.5px lightgray solid">
+    <div style="width: 100%;height: 3px;background-color: greenyellow;"></div>
+    <br/>
+
+    <!-- 1 -->
+    <div style="margin-top:30px;margin-left:40px;float:left;width:15%;height:150px">
+        <img src="../img/one.png" height="100%" width="100%"/>
+    </div>
+
+    <!-- 2 -->
+    <div style="margin-top:30px;margin-left:40px;float:left;width:15%;height:150px">
+        <img src="../img/two.png" height="100%" width="100%"/>
+    </div>
+
+    <!-- 3 -->
+    <div style="margin-top:30px;margin-left:40px;float:left;width:15%;height:150px">
+        <img src="../img/four.png" height="100%" width="100%"/>
+    </div>
+
+    <!-- 4 -->
+    <div style="margin-top:30px;margin-left:40px;float:left;width:15%;height:150px">
+        <img src="../img/five.png" height="100%" width="100%"/>
+    </div>
+
+    <!-- 5 -->
+    <div style="margin-top:30px;margin-left:40px;float:left;width:15%;height:150px">
+        <img src="../img/six.png" height="100%" width="100%"/>
+    </div>
+
+
+
+</div>
+
+
+
+<!-- 热门动态 -->
+<div class="block-wrapper dongtai">
+    <div class="wrap">
+        <div class="block-header">
+            <h3>最新物流专线</h3>
+            <h3>最新物流动态</h3>
+            <h3>热门城市</h3>
+        </div>
+        <div class="block-body">
+            <div class="block-content">
+                <div class="section-box">
+                    <div class="section-5">
+                        <ul class="dongtai-list">
+                            <li class="item"><a href="http://www.lvmae.com/road/10747-34248/index.html" target="_blank">上海到内江物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/road/10747-34607/index.html" target="_blank">上海到南充物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/road/10747-33557/index.html" target="_blank">上海到绵阳物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/road/10747-34375/index.html" target="_blank">上海到乐山物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/road/10747-35372/index.html" target="_blank">上海到广安物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/road/10747-33860/index.html" target="_blank">上海到广元物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/road/10747-34116/index.html" target="_blank">上海到遂宁物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/road/10747-35176/index.html" target="_blank">上海到宜宾物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/road/10747-33423/index.html" target="_blank">上海到德阳物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/road/10747-35038/index.html" target="_blank">上海到眉山物流专线</a></li>
+                        </ul>
+                    </div>
+                    <div class="section-5">
+                        <ul class="dongtai-list">
+                            <li class="item"><a href="http://www.lvmae.com/news/line/7120.html" target="_blank">铁岭到阿拉善物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/news/hangye/7119.html" target="_blank">10月份中国大宗商品指数显示：供应压力有所加大，市场调整风险加剧</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/news/line/7118.html" target="_blank">铁岭到沈阳物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/news/hangye/7117.html" target="_blank">2018年10月中国物流业景气指数为54.5%</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/news/line/7116.html" target="_blank">铁岭到大连物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/news/hangye/7115.html" target="_blank">11月份这些新规将影响快递从业人员</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/news/line/7114.html" target="_blank">铁岭到鞍山物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/news/hangye/7113.html" target="_blank">中欧班列（西安）2018年首超千列开行仪式在西安新建新筑物流基地举行</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/news/line/7112.html" target="_blank">铁岭到抚顺物流专线</a></li>
+                            <li class="item"><a href="http://www.lvmae.com/news/company/7111.html" target="_blank">中国邮政已完成组建省级寄递事业部</a></li>
+                        </ul>
+                    </div>
+                    <div class="section-5">
+                        <ul class="dongtai-list">
+                            <li class="item"><span class="li_icon">1</span><a href="http://www.lvmae.com/company/10747-0.html" target="_blank">上海 上海市</a></li>
+                            <li class="item"><span class="li_icon">2</span><a href="http://www.lvmae.com/company/11504-0.html" target="_blank">江苏 苏州市</a></li>
+                            <li class="item"><span class="li_icon">3</span><a href="http://www.lvmae.com/company/2-0.html" target="_blank">北京 北京市</a></li>
+                            <li class="item"><span class="li_icon">4</span><a href="http://www.lvmae.com/company/28062-0.html" target="_blank">广东 广州市</a></li>
+                            <li class="item"><span class="li_icon">5</span><a href="http://www.lvmae.com/company/32756-0.html" target="_blank">四川 成都市</a></li>
+                            <li class="item"><span class="li_icon">6</span><a href="http://www.lvmae.com/company/16449-0.html" target="_blank">福建 泉州市</a></li>
+                            <li class="item"><span class="li_icon">7</span><a href="http://www.lvmae.com/company/344-0.html" target="_blank">天津 天津市</a></li>
+                            <li class="item"><span class="li_icon">8</span><a href="http://www.lvmae.com/company/13542-0.html" target="_blank">浙江 金华市</a></li>
+                            <li class="item"><span class="li_icon">9</span><a href="http://www.lvmae.com/company/10996-0.html" target="_blank">江苏 南京市</a></li>
+                            <li class="item"><span class="li_icon">10</span><a href="http://www.lvmae.com/company/29658-0.html" target="_blank">广东 东莞市</a></li>
+                        </ul>
+                    </div>
+                    <div class="section-6">
+                        <div class="partner">
+                            <div class="t-1">合作伙伴</div>
+                            <ul class="partner-list">
+                                <li class="item">
+                                    <a href="http://www.csc86.com" target="_blank" rel="external nofollow"><img width="120" height="38" title="华南城网" alt="" src="http://www.lvmae.com/file/upload/201509/08/13-50-28-40-25696.jpg"></a>
+                                </li>
+                                <li class="item">
+                                    <a href="http://www.yogapay.com" target="_blank" rel="external nofollow"><img width="120" height="38" title="支付界" alt="" src="http://www.lvmae.com/file/upload/201509/08/13-49-24-74-25696.jpg"></a>
+                                </li>
+                                <li class="item">
+                                    <a href="http://www.supaide.com" target="_blank" rel="external nofollow"><img width="120" height="38" title="速派得" alt="" src="http://www.lvmae.com/file/upload/201509/08/13-34-36-65-25696.jpg"></a>
+                                </li>
+                                <li class="item">
+                                    <a href="http://www.lvmae.net/" target="_blank"><img width="120" height="38" title="禾嘉科技" alt="" src="http://www.lvmae.com/file/upload/201605/24/10-41-36-54-31604.png"></a>
+                                </li>
+                                <li class="item">
+                                    <a href="http://www.chinaports.com/shiptracker/shipinit.do?method=forIndex" target="_blank" rel="external nofollow"><img width="120" height="38" title="船舶动态查询" alt="" src="http://www.lvmae.com/file/upload/201509/21/14-04-52-83-25696.jpg"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- 底部友情提示 -->
+<div style="margin-left:107px;margin-top:50px;width:84%;height:110px;background-color: dimgray">
+    <div style="height:20px;width:70px;padding-top: 30px;margin-left: 50px;">
+        <font size="3" color="white">友情链接</font>
+    </div>
+
+    <div style="height:20px;width:1000px;margin-top: 10px;margin-left: 50px;">
+
+        <a style="color:white;" href="">易查单</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">图文同步</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">云网客</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">中国物流城</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">佳豪鑫物流</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">物流巴巴</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">中国港口网</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">海运报价</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">物流信息</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">海运价格</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">四川物流</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">京东快递查询</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">深圳国际快递</a>&nbsp;&nbsp;
+        <a style="color:white;" href="">ems经济快递查询</a>&nbsp;&nbsp;
+
+    </div>
+
+</div>
+
+
+
+<!-- 页脚 -->
+<div class="footer">
+    <div class="wrap">
+        <p><a href="http://www.lvmae.com/news/lvmae/1339.html" target="_blank" rel="nofollow">绿蚂蚁介绍</a><span class="line">|</span><a href="http://www.lvmae.net/list-10-1.html" target="_blank" rel="nofollow">大事记</a><span class="line">|</span><a href="http://www.lvmae.net/list-14-1.html" target="_blank" rel="nofollow">公司动态</a><span class="line">|</span><a href="http://www.lvmae.net/list-13-1.html" target="_blank" rel="nofollow">媒体报告</a><span class="line">|</span><a href="http://www.lvmae.com/about/6.html" target="_blank" rel="nofollow">联系我们</a><span class="line">|</span><a href="http://www.lvmae.net/">绿蚂蚁官网</a></p>
+        <p>Copyright © 绿蚂蚁干线<a href="http://www.lvmae.com">物流</a>B2B平台 All rights reserved. <a href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备14032800号-1</a></p>
+        <p class="sitemap-a">
+            <a href="http://www.lvmae.com/sitemap/html/road/shen.html" target="_blank">物流专线sitemap</a>
+            <a href="http://www.lvmae.com/sitemap/html/company/shen.html" target="_blank">物流公司sitemap</a>
+            <a href="http://www.lvmae.com/sitemap/xml/road/index.xml" target="_blank">物流专线sitemap-xml</a>
+            <a href="http://www.lvmae.com/sitemap/xml/company/index.xml" target="_blank">物流公司sitemap-xml</a>
+        </p>
+    </div>
+</div>
 
 </body>
+
+<!-- 提交订单轮播脚本 -->
 <script>
-    $(function (){
-        index();
+    window.onload = rollu(50);
+
+    function rollu(t) {
+        var f1 = document.getElementById("f1");
+        var f2 = document.getElementById("f2");
+        var four = document.getElementById("four");
+        f2.innerHTML = f1.innerHTML;
+        four.scrollTop = 0;
+        var timer = setInterval(rollStartu, t);
+        four.onmouseover = function () {
+            clearInterval(timer)
+        }
+        four.onmouseout = function () {
+            timer = setInterval(rollStartu, t);
+        }
+    }
+
+    function rollStartu() {
+        if (four.scrollTop >= f1.scrollHeight) {
+            four.scrollTop = 0;
+        } else {
+            four.scrollTop++;
+        }
+    }
+</script>
+
+
+<!-- 页面加载导航条内容脚本 -->
+<script>
+
+    $(function() {
+        getTop();
+        //findCity();
     })
-    function index(){
-    layui.use(['table'], function(){
-        var table = layui.table;
-        table.render({
-            elem: '#test'
-            ,url:'../ant/getAll'
-            ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
-            ,id:'testReload'
-            ,limits : [3,5,7,9]
-            ,limit : 3
-            ,page:true
-            ,cols: [
-                [
-                    {field:'id',  title: 'ID', sort: true}
-                    ,{field:'name',  title: '用户名'}
-                    ,{field:'phone',  title: '联系方式'}
-                    ,{field:'dizhi',  title: '地址'}
-                    ,{field:'jianjie', title: '简介',} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
-                    ,{field:'type', title: '类型'}
-                    ,{field:'img',   title: '图片',
-                    templet:function (d) {
-                        return `<div class="layer-photos-demo" onclick="img_click()" style="cursor:pointer;">
-                                      <img layer-pid="imgId"  layer-src="/images/bug-success-bg.jpg" src="/111.jpg" alt="加载中...">
-                                    </div>`;
-                    }
-                    }
-                    ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}
-                ]
-            ]
-        });
-        //通过添加监听
-        table.on('tool(tblist)', function(obj) {
-             data = obj.data;
-            //然后data.你的值就可以了
-            //alert(data.id);
+
+
+
+
+
+    //导航条内容查询
+    function  getTop(){
+        $.ajax({
+            url:'../ant/getTop',
+            type:'post',
+            success:function(data){
+
+
+                for(var i=0;i<data.length;i++){
+                    //one=one+1;
+                    $("#"+i+"").html("<a href='"+data[i].url+"'>"+data[i].name+"</a>");
+                }
+
+
+            },
+            error:function(){
+                alert("导航条查询失败");
+
+            }
         })
+    }
+
+
+    //分站条内容
+    function findCity(){
+        $.ajax({
+            url:'../ant/findCity',
+            type:'post',
+            success:function(data){
+
+                var str="";
+                for (var i=0;i<data.length;i++){
+                    str+="<font size='2'><a href=''>"+data[i].name+"&nbsp;&nbsp;&nbsp;&nbsp;"+"</a></font>";
+                    $("#spanId").html(str);
+                    if(i>13){
+                        $("#spanId").append("<font size='2'><a href=''>更多</a></font>");
+                        break;
+                    }
+                }
+
+            },
+            error:function(){
+                alert("查询分站城市失败");
+            }
+        })
+    }
+
+</script>
+
+
+<!-- 导航条脚本 -->
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+</script>
+<!-- 导航条脚本结束 -->
+
+
+
+
+<!-- 图片轮播脚本开始 -->
+<script>
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '100%' //设置容器宽度
+            ,height: '400px'
+            ,arrow: 'hover' //始终显示箭头
+            ,anim: 'fade' //切换动画方式
+        });
+    });
+</script>
+<!-- 图片轮播脚本结束 -->
+
+
+<!-- 选项卡脚本 -->
+<script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
 
     });
+</script>
+
+
+
+<!-- 文字轮播脚本 -->
+<script>
+    window.onload = roll(50);
+
+    function roll(t) {
+        var ul1 = document.getElementById("ul1");
+        var ul2 = document.getElementById("ul2");
+        var box = document.getElementById("box");
+        ul2.innerHTML = ul1.innerHTML;
+        box.scrollTop = 0;
+        var timer = setInterval(rollStart, t);
+        box.onmouseover = function () {
+            clearInterval(timer)
+        }
+        box.onmouseout = function () {
+            timer = setInterval(rollStart, t);
+        }
     }
-    var data;
 
+    function rollStart() {
+        if (box.scrollTop >= ul1.scrollHeight) {
+            box.scrollTop = 0;
+        } else {
+            box.scrollTop++;
+        }
+    }
+</script>
 
-</script>
-<script type="text/html" id="barDemo">
-    <a class="layui-btn layui-btn-sm layui-btn-normal" lay-event="detail" href="javascript:anniu(data.id)">查看详情</a>
-</script>
 
 <script>
+    window.onload = rolls(50);
 
-    function anniu(id){
-        alert(id);
-        location.href="../ant/tofindPage?id="+id;
+    function rolls(t) {
+        var ul3 = document.getElementById("ul3");
+        var ul4 = document.getElementById("ul4");
+        var box2 = document.getElementById("box2");
+        ul4.innerHTML = ul3.innerHTML;
+        box2.scrollTop = 0;
+        var timer = setInterval(rollStart2, t);
+        box2.onmouseover = function () {
+            clearInterval(timer)
+        }
+        box2.onmouseout = function () {
+            timer = setInterval(rollStart2, t);
+        }
     }
 
-    //承运商入驻
-    function ruzhu(){
-        //alert("网络延迟，稍后请重试");
-        //在这里面输入任何合法的js语句
-        layer.open({
-            type: 1 //Page层类型
-            ,area: ['500px', '300px']
-            ,title: '你好，layer'
-            ,shade: 0.6 //遮罩透明度
-            ,maxmin: true //允许全屏最小化
-            ,anim: 1 //0-6的动画形式，-1不开启
-            ,content: '<div style="padding:50px;">网络延迟，稍后请重试</div>'
-        });
+    function rollStart2() {
+        if (box2.scrollTop >= ul3.scrollHeight) {
+            box2.scrollTop = 0;
+        } else {
+            box2.scrollTop++;
+        }
     }
+</script>
+
+
+<script>
+    window.onload = rollt(50);
+
+    function rollt(t) {
+        var ul5 = document.getElementById("ul5");
+        var ul6 = document.getElementById("ul6");
+        var box3 = document.getElementById("box3");
+        ul6.innerHTML = ul5.innerHTML;
+        box3.scrollTop = 0;
+        var timer = setInterval(rollStart3, t);
+        box3.onmouseover = function () {
+            clearInterval(timer)
+        }
+        box3.onmouseout = function () {
+            timer = setInterval(rollStart3, t);
+        }
+    }
+
+    function rollStart3() {
+        if (box3.scrollTop >= ul5.scrollHeight) {
+            box3.scrollTop = 0;
+        } else {
+            box3.scrollTop++;
+        }
+    }
+</script>
+
+
+
+<script>
+    window.onload = rolla(50);
+
+    function rolla(t) {
+        var ul7 = document.getElementById("ul7");
+        var ul8 = document.getElementById("ul8");
+        var box4 = document.getElementById("box4");
+        ul8.innerHTML = ul7.innerHTML;
+        box4.scrollTop = 0;
+        var timer = setInterval(rollStart4, t);
+        box4.onmouseover = function () {
+            clearInterval(timer)
+        }
+        box4.onmouseout = function () {
+            timer = setInterval(rollStart4, t);
+        }
+    }
+
+    function rollStart4() {
+        if (box4.scrollTop >= ul7.scrollHeight) {
+            box4.scrollTop = 0;
+        } else {
+            box4.scrollTop++;
+        }
+    }
+</script>
+
+
+
+<script>
+    window.onload = rollh(50);
+
+    function rollh(t) {
+        var ulw = document.getElementById("ulw");
+        var ulq = document.getElementById("ulq");
+        var box5 = document.getElementById("box5");
+        ulq.innerHTML = ulw.innerHTML;
+        box5.scrollTop = 0;
+        var timer = setInterval(rollStart5, t);
+        box5.onmouseover = function () {
+            clearInterval(timer)
+        }
+        box5.onmouseout = function () {
+            timer = setInterval(rollStart5, t);
+        }
+    }
+
+    function rollStart5() {
+        if (box5.scrollTop >= ulw.scrollHeight) {
+            box5.scrollTop = 0;
+        } else {
+            box5.scrollTop++;
+        }
+    }
+</script>
+
+
+
+
+<!-- 省市区切换脚本 -->
+<script type="text/javascript">
+
+
+    function gethidden(){
+        var divid=$("#divid");
+        divid.prop("hidden","");
+    }
+    function gethidden2(){
+        var divid=$("#divid2");
+        divid.prop("hidden","");
+    }
+    /*layui.use('element', function(){
+        var $ = layui.jquery
+            ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+    })*/
+    //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
+
+
+    /*//监听Tab切换，以改变地址hash值
+    element.on('tab(test1)', function(){
+        location.hash = 'test1='+ this.getAttribute('lay-id');
+    });*/
+
+
+    function getprovinces(){
+        $.ajax({
+            url:"../ant/getprovinces",
+            type:"post",
+            success:function(data){
+                var htm="";
+                for (var i=0;i<data.rows.length;i++){
+                    htm+="<a href='javascript:getcity("+data.rows[i].id+",&quot;"+data.rows[i].name+"&quot;)'>&nbsp;"+data.rows[i].name+" &nbsp;</a>";
+                    $("#provincesid").html(htm);
+                }
+
+            },error:function(){
+                alert("请重新选中，网络开小差");
+            }
+        })
+    }
+
+    function getcity(cid,cname){
+        var htm="";
+        //var layid = location.hash.replace(/^#test1=/, '333');
+        layui.element.tabChange('test1','444'); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+        $.ajax({
+            url:"../ant/getcity",
+            data:{cid:cid,cname:cname},
+            type:"post",
+            success:function(data){
+                for (var i=0;i<data.rows.length;i++){
+                    htm+="<a href='javascript:getcounty("+data.rows[i].id+",&quot;"+cname+"&quot;,&quot;"+data.rows[i].name+"&quot;)'>&nbsp;"+data.rows[i].name+" &nbsp;</a>";
+                    $("#cityid").html(htm);
+                }
+            },error:function(){
+                alert("请重新选中，网络开小差");
+            }
+
+        })
+    }
+
+
+    function getcounty(cid,cname,ctname){
+        var htm="";
+        //var layid = location.hash.replace(/^#test1=/, '333');
+        layui.element.tabChange('test1','555'); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+        $.ajax({
+            url:"../ant/getcounty",
+            data:{cid:cid},
+            type:"post",
+            success:function(data){
+                for (var i=0;i<data.rows.length;i++){
+                    htm+="<a href='javascript:sethidden(&quot;"+cname+"&quot;,&quot;"+ctname+"&quot;,&quot;"+data.rows[i].name+"&quot;)'>&nbsp;"+data.rows[i].name+" &nbsp;</a>";
+                    $("#countyid").html(htm);
+                }
+            },error:function(){
+                alert("请重新选中，网络开小差");
+            }
+
+        })
+    }
+    function sethidden(cname,ctname,xname){
+        //alert(cname+"-"+ctname+"-"+xname);
+        var str=cname+"-"+ctname+"-"+xname;
+        $("#originid").val(str);
+        var divid=$("#divid");
+        divid.prop("style","display:none");
+
+    }
+
+
+    function getprovinces2(){
+        $.ajax({
+            url:"../ant/getprovinces",
+            type:"post",
+            success:function(data){
+                var htm="";
+                for (var i=0;i<data.rows.length;i++){
+                    htm+="<a href='javascript:getcity2("+data.rows[i].id+",&quot;"+data.rows[i].name+"&quot;)'>&nbsp;"+data.rows[i].name+" &nbsp;</a>";
+                    $("#provincesid2").html(htm);
+                }
+
+            },error:function(){
+                alert("请重新选中，网络开小差");
+            }
+        })
+    }
+
+    function getcity2(cid,cname){
+        var htm="";
+        //var layid = location.hash.replace(/^#test1=/, '333');
+        layui.element.tabChange('test2','44'); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+        $.ajax({
+            url:"../ant/getcity",
+            data:{cid:cid,cname:cname},
+            type:"post",
+            success:function(data){
+                for (var i=0;i<data.rows.length;i++){
+                    htm+="<a href='javascript:getcounty2("+data.rows[i].id+",&quot;"+cname+"&quot;,&quot;"+data.rows[i].name+"&quot;)'>&nbsp;"+data.rows[i].name+" &nbsp;</a>";
+                    $("#cityid2").html(htm);
+                }
+            },error:function(){
+                alert("请重新选中，网络开小差");
+            }
+
+        })
+    }
+    function getcounty2(cid,cname,ctname){
+        var htm="";
+        //var layid = location.hash.replace(/^#test1=/, '333');
+        layui.element.tabChange('test2','55'); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+        $.ajax({
+            url:"../ant/getcounty",
+            data:{cid:cid},
+            type:"post",
+            success:function(data){
+                for (var i=0;i<data.rows.length;i++){
+                    htm+="<a href='javascript:sethidden2(&quot;"+cname+"&quot;,&quot;"+ctname+"&quot;,&quot;"+data.rows[i].name+"&quot;)'>&nbsp;"+data.rows[i].name+" &nbsp;</a>";
+                    $("#countyid2").html(htm);
+                }
+            },error:function(){
+                alert("请重新选中，网络开小差");
+            }
+
+        })
+    }
+    function sethidden2(cname,ctname,xname){
+        var str=cname+"-"+ctname+"-"+xname;
+        $("#provenanceid").val(str);
+        var divid=$("#divid2");
+        divid.prop("style","display:none");
+    }
+    //常用有问题 记得修改
+    function getoftencity(){
+        $.ajax({
+            url:"../ant/getoftencity",
+            type:"post",
+            success:function(data){
+                var htm="";
+                for (var i=0;i<data.rows.length;i++){
+                    htm+="<a href='javascript:void(0)'>&nbsp;"+data.rows[i].name+" &nbsp;</a>";
+                    $("#oftencityid").html(htm);
+                }
+
+            },error:function(){
+                alert("请重新选中，网络开小差");
+            }
+        })
+    }
+    function getoftencity2(){
+        var htm="";
+        $.ajax({
+            url:"../ant/getoftencity",
+            type:"post",
+            success:function(data){
+                var htm="";
+                for (var i=0;i<data.rows.length;i++) {
+                    htm += "<a href='javascript:void(0)'>&nbsp;" + data.rows[i].name + " &nbsp;</a>";
+                    $("#oftencityid").html(htm);
+                }
+            },error:function(){
+                alert("请重新选中，网络开小差");
+            }
+
+        })
+    }
+
+
+    function tocarriers(){
+
+        var provenance=$("#provenanceid").val();
+        var origin=$("#originid").val();
+
+        alert(provenance);
+        alert(origin);
+        $.ajax({
+            url:'../ant/findGsId',
+            data:{provenance:provenance,origin:origin},
+            type:'post',
+            success:function (data) {
+                alert(data);
+            },
+            error:function(){
+                alert("失败");
+            }
+        })
+    }
+
+
+
+    //查询承运商
+    function findCompany(){
+        var name=$("#cname").val();
+        alert(name);
+        if(name!=null && name!=""){
+            location.href="../ant/findCompany?name="+name;
+        }
+        else{
+            alert("请填写公司名称");
+        }
+
+    }
+
 
 
 </script>
+
+
 </html>
